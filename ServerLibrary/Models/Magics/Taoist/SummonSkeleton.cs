@@ -56,7 +56,7 @@ namespace Server.Models.Magics
                 return;
             }
 
-            if (Player.Pets.Count >= 2) return;
+            if (Player.Pets.Count >= 6) return;
 
             ob = MonsterObject.GetMonster(info);
 
