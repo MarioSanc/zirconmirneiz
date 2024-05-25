@@ -1036,7 +1036,10 @@ namespace Server.Models
 
             if ((Poison & PoisonType.Hemorrhage) == PoisonType.Hemorrhage) return;
 
-            int regen = (int)Math.Max(1, Stats[Stat.Health] * 0.02F); //2% every 10 seconds aprox
+            int regenmon = Stats[Stat.SizePercent];
+            if (regenmon == 0)
+            regenmon = 1;
+            int regen = (int)Math.Max(1, Stats[Stat.Health] * 0.02F * regenmon); 
 
             ChangeHP(regen);
         }
