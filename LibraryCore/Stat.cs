@@ -828,6 +828,9 @@ namespace Library
         [StatDescription(Title = "Size Percent", Mode = StatType.None)]
         SizePercent,
 
+        [StatDescription(Title = "Regen Multiplicator", Mode = StatType.None)]
+        RegenMultiplicator,
+
         [StatDescription(Title = "Growth Level", Format = "{0}", Mode = StatType.Default)]
         GrowthLevel,
 

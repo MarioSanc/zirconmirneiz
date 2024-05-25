@@ -1036,7 +1036,7 @@ namespace Server.Models
 
             if ((Poison & PoisonType.Hemorrhage) == PoisonType.Hemorrhage) return;
 
-            int regenmon = Stats[Stat.SizePercent];
+            int regenmon = Stats[Stat.RegenMultiplicator];
             if (regenmon == 0)
             regenmon = 1;
             int regen = (int)Math.Max(1, Stats[Stat.Health] * 0.02F * regenmon); 
