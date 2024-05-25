@@ -74,6 +74,9 @@ namespace Server.Models.Magics
                     hasGreaterPoisonDust = true;
                 }
 
+                // Add target to targetlist, needed to display poison visual effect over the target.
+                response.Targets.Add(realTarget.ObjectID);
+
                 ActionList.Add(new DelayedAction(delay, ActionType.DelayMagic, Type, realTarget, shape == 0 ? PoisonType.Green : PoisonType.Red, hasGreaterPoisonDust));
             }
 
