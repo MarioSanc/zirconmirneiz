@@ -115,6 +115,7 @@ namespace Server.Models.Magics
                 Owner = Player,
                 TickCount = duration / 2,
                 TickFrequency = TimeSpan.FromSeconds(2),
+                CanKill = true,
             });
 
             Player.LevelMagic(Magic);

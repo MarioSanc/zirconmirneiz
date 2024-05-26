@@ -282,14 +282,17 @@ namespace Server.Models
 
                 if (damage > 0)
                 {
-                    if (Race == ObjectType.Monster && ((MonsterObject)this).MonsterInfo.IsBoss)
+                    /*if (Race == ObjectType.Monster && ((MonsterObject)this).MonsterInfo.IsBoss)
                         damage = 0;
                     else
                     {
                         if (!poison.CanKill)
-                            damage = Math.Min(CurrentHP - 1, damage);
-                    }
-                        
+                        damage = Math.Min(CurrentHP - 1, damage);
+                    //Esta parte es para que el pois no quite daño - si se quiere asi hay que eliminar el codigo repetido de justo abajo//
+                    }*/
+                    if (!poison.CanKill)
+                        damage = Math.Min(CurrentHP - 1, damage);
+
                     if (damage > 0)
                     {
                         #region Conquest Stats
