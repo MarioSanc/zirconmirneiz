@@ -129,7 +129,7 @@ namespace Server.Envir
         public static int MaxStrength { get; set; } = 5;
         public static int StrengthAddRate { get; set; } = 10;
         public static int StrengthLossRate { get; set; } = 20;
-        public static bool DropVisibleOtherPlayers { get; set; } = false;
+        public static bool DropVisibleOtherPlayers { get; set; } = true;
         public static bool EnableFortune { get; set; } = true;
 
         [ConfigSection("Rates")]

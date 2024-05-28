@@ -623,6 +623,20 @@ namespace Client.Scenes.Views
                     MapObject.MagicObject = MapObject.TargetObject;
                     GameScene.Game.FocusObject = MapObject.MouseObject;
                 }
+                else if (MapObject.TargetObject != null && MapObject.TargetObject.Race == ObjectType.Player)
+                {
+                    if (Functions.Distance(MapObject.TargetObject.CurrentLocation, MapObject.User.CurrentLocation) == 1 && CEnvir.Now > User.AttackTime && User.Horse == HorseType.None)
+                    {
+                        MapObject.User.AttemptAction(new ObjectAction(
+                            MirAction.Attack,
+                            Functions.DirectionFromPoint(MapObject.User.CurrentLocation, MapObject.TargetObject.CurrentLocation),
+                            MapObject.User.CurrentLocation,
+                            0, //Ranged Attack Target ID
+                            MagicType.None,
+                            Element.None));
+                    }
+                }
+
                 return;
             }
 

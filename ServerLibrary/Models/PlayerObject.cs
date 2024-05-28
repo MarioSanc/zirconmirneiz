@@ -1961,6 +1961,14 @@ namespace Server.Models
             ApplyGuildBuff();
         }
 
+        public void Revive()
+        {
+            Dead = false;
+            SetHP(Stats[Stat.Health]);
+            SetMP(Stats[Stat.Mana]);
+            Broadcast(new S.ObjectRevive { ObjectID = ObjectID, Location = CurrentLocation, Effect = false });
+        }
+
         public void RefreshWeight()
         {
             BagWeight = 0;

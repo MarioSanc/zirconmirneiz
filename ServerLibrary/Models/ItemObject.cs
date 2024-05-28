@@ -79,11 +79,11 @@ namespace Server.Models
 
                     var spawnElapsed = (int)Math.Floor((SEnvir.Now - SpawnTime).TotalMinutes);
 
-                    if (spawnElapsed >= 10)
+                    if (spawnElapsed >= 5)
                         return true;
-                    else if (isSameGuild && spawnElapsed >= 5)
+                    else if (isSameGuild && spawnElapsed >= 2)
                         return true;
-                    else if (isSameGroup && spawnElapsed >= 2)
+                    else if (isSameGroup && spawnElapsed >= 0)
                         return true;
                 }
 

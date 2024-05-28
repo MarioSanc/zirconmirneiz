@@ -2677,9 +2677,17 @@ namespace Server.Models
                         player.GainDisciplineExperience(GrowthLevel);
                 }
             }
-
-            if (!EXPOwner.Dead && EXPOwner.CurrentMap == CurrentMap && Functions.InRange(EXPOwner.CurrentLocation, CurrentLocation, Config.MaxViewRange))
-                Drop(EXPOwner, 1, dRate);
+            // El IF de abajo hace que el drop no sea visible para los demas.
+            if (dPlayers.Count == 0)
+            {
+                if (!EXPOwner.Dead && EXPOwner.CurrentMap == CurrentMap && Functions.InRange(EXPOwner.CurrentLocation, CurrentLocation, Config.MaxViewRange))
+                    Drop(EXPOwner, 1, dRate);
+            }
+            else
+            {
+                foreach (PlayerObject player in dPlayers)
+                    Drop(player, dPlayers.Count, dRate);
+            }
         }
 
         public virtual void Drop(PlayerObject owner, int players, decimal rate)
@@ -2802,6 +2810,8 @@ namespace Server.Models
                     ItemObject ob = new ItemObject
                     {
                         Item = item,
+                        Account = owner.Character.Account,
+                        MonsterDrop = true,
                     };
 
                     ob.Spawn(CurrentMap, cell.Location);
@@ -2872,6 +2882,8 @@ namespace Server.Models
                     ItemObject ob = new ItemObject
                     {
                         Item = item,
+                        Account = owner.Character.Account,
+                        MonsterDrop = true,
                     };
 
                     ob.Spawn(CurrentMap, cell.Location);
@@ -2975,6 +2987,8 @@ namespace Server.Models
                             ItemObject ob = new ItemObject
                             {
                                 Item = item,
+                                Account = owner.Character.Account,
+                                MonsterDrop = true,
                             };
 
                             ob.Spawn(CurrentMap, cell.Location);
