@@ -1512,6 +1512,9 @@ namespace Client.Scenes
 
                         UseMagic(SpellKey.Spell24);
                         break;
+                    case KeyBindAction.ShowHideItemsName:
+                        Config.ShowItemNames = !Config.ShowItemNames;
+                        break;
                     default:
                         continue;
                 }

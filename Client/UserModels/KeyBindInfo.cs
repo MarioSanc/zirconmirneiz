@@ -339,5 +339,8 @@ namespace Client.UserModels
 
         [Description("Menu Window")]
         MenuWindow,
+
+        [Description("Show/Hide Items Name")]
+        ShowHideItemsName,
     }
 }
