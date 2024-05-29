@@ -58,7 +58,7 @@ namespace Server.Models.Magics
 
             if (info == null) return;
 
-            if (Player.Pets.Count >= 2) return;
+            if (Player.Pets.Count >= 6) return;
 
             if (SEnvir.Random.Next(Globals.MagicMaxLevel + 1) > Magic.Level)
             {

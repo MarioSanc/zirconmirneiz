@@ -153,6 +153,7 @@ namespace Server.Views
             MaxStrengthEdit.EditValue = Config.MaxStrength;
             StrengthAddRateEdit.EditValue = Config.StrengthAddRate;
             StrengthLossRateEdit.EditValue = Config.StrengthLossRate;
+            DropVisibleOtherPlayersEdit.EditValue = Config.DropVisibleOtherPlayers;
 
             //Rates
             ExperienceRateEdit.EditValue = Config.ExperienceRate;
@@ -268,6 +269,7 @@ namespace Server.Views
             Config.MaxStrength = (int)MaxStrengthEdit.EditValue;
             Config.StrengthAddRate = (int)StrengthAddRateEdit.EditValue;
             Config.StrengthLossRate = (int)StrengthLossRateEdit.EditValue;
+            Config.DropVisibleOtherPlayers = (bool)DropVisibleOtherPlayersEdit.EditValue;
 
             //Rates
             Config.ExperienceRate = (int)ExperienceRateEdit.EditValue;
@@ -322,6 +324,11 @@ namespace Server.Views
             if (FolderDialog.ShowDialog() != DialogResult.OK) return;
 
             ClientPathEdit.EditValue = FolderDialog.SelectedPath;
+        }
+
+        private void textEdit1_EditValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

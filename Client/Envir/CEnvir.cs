@@ -653,6 +653,11 @@ namespace Client.Envir
                     bind.Category = "Items";
                     bind.Key1 = Keys.Scroll;
                     break;
+                case KeyBindAction.ShowHideItemsName:
+                    bind.Category = "Items";
+                    bind.Key1 = Keys.I;
+                    //bind.Shift1 = true; //This means press and hold left shift
+                    break;
                 case KeyBindAction.UseBelt01:
                     bind.Category = "Items";
                     bind.Key1 = Keys.D1;
