@@ -2012,44 +2012,58 @@ namespace Server.Models
             switch (Character.Account.Horse)
             {
                 case HorseType.Brown:
+                    Stats[Stat.Comfort] += 2;
                     Stats[Stat.BagWeight] += 50;
+                    Stats[Stat.MaxAC] += 2;
+                    Stats[Stat.MaxMR] += 2;
+                    Stats[Stat.MaxDC] += 2;
+                    Stats[Stat.MaxMC] += 2;
+                    Stats[Stat.MaxSC] += 2;
                     break;
                 case HorseType.White:
                     Stats[Stat.Comfort] += 2;
-                    Stats[Stat.BagWeight] += 100;
-                    Stats[Stat.MaxAC] += 5;
-                    Stats[Stat.MaxMR] += 5;
-                    Stats[Stat.MaxDC] += 5;
-                    Stats[Stat.MaxMC] += 5;
-                    Stats[Stat.MaxSC] += 5;
+                    Stats[Stat.BagWeight] += 50;
+                    Stats[Stat.MaxAC] += 2;
+                    Stats[Stat.MaxMR] += 2;
+                    Stats[Stat.MaxDC] += 2;
+                    Stats[Stat.MaxMC] += 2;
+                    Stats[Stat.MaxSC] += 2;
                     break;
                 case HorseType.Red:
-                    Stats[Stat.Comfort] += 5;
-                    Stats[Stat.BagWeight] += 150;
-                    Stats[Stat.MaxAC] += 12;
-                    Stats[Stat.MaxMR] += 12;
-                    Stats[Stat.MaxDC] += 12;
-                    Stats[Stat.MaxMC] += 12;
-                    Stats[Stat.MaxSC] += 12;
+                    Stats[Stat.Comfort] += 2;
+                    Stats[Stat.BagWeight] += 50;
+                    Stats[Stat.MaxAC] += 2;
+                    Stats[Stat.MaxMR] += 2;
+                    Stats[Stat.MaxDC] += 2;
+                    Stats[Stat.MaxMC] += 2;
+                    Stats[Stat.MaxSC] += 2;
                     break;
                 case HorseType.Black:
-                    Stats[Stat.Comfort] += 7;
-                    Stats[Stat.BagWeight] += 200;
-                    Stats[Stat.MaxAC] += 25;
-                    Stats[Stat.MaxMR] += 25;
-                    Stats[Stat.MaxDC] += 25;
-                    Stats[Stat.MaxMC] += 25;
-                    Stats[Stat.MaxSC] += 25;
+                    Stats[Stat.Comfort] += 2;
+                    Stats[Stat.BagWeight] += 50;
+                    Stats[Stat.MaxAC] += 2;
+                    Stats[Stat.MaxMR] += 2;
+                    Stats[Stat.MaxDC] += 2;
+                    Stats[Stat.MaxMC] += 2;
+                    Stats[Stat.MaxSC] += 2;
                     break;
                 case HorseType.WhiteUnicorn:
+                    Stats[Stat.Comfort] += 5;
+                    Stats[Stat.BagWeight] += 200;
+                    Stats[Stat.MaxAC] += 20;
+                    Stats[Stat.MaxMR] += 20;
+                    Stats[Stat.MaxDC] += 20;
+                    Stats[Stat.MaxMC] += 20;
+                    Stats[Stat.MaxSC] += 20;
+                    break;
                 case HorseType.RedUnicorn:
-                    Stats[Stat.Comfort] += 9;
-                    Stats[Stat.BagWeight] += 250;
-                    Stats[Stat.MaxAC] += 30;
-                    Stats[Stat.MaxMR] += 30;
-                    Stats[Stat.MaxDC] += 30;
-                    Stats[Stat.MaxMC] += 30;
-                    Stats[Stat.MaxSC] += 30;
+                    Stats[Stat.Comfort] += 5;
+                    Stats[Stat.BagWeight] += 200;
+                    Stats[Stat.MaxAC] += 20;
+                    Stats[Stat.MaxMR] += 20;
+                    Stats[Stat.MaxDC] += 20;
+                    Stats[Stat.MaxMC] += 20;
+                    Stats[Stat.MaxSC] += 20;
                     break;
             }
 

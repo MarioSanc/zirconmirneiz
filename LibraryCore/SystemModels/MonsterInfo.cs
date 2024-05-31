@@ -203,6 +203,21 @@ namespace Library.SystemModels
         }
         private bool _IsBoss;
 
+        public bool IsSemi
+        {
+            get { return _IsSemi; }
+            set
+            {
+                if (_IsSemi == value) return;
+
+                var oldValue = _IsSemi;
+                _IsSemi = value;
+
+                OnChanged(oldValue, value, "IsSemi");
+            }
+        }
+        private bool _IsSemi;
+
         public MonsterFlag Flag
         {
             get { return _Flag; }

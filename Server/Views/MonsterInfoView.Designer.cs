@@ -77,6 +77,7 @@
             ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             JsonImportExport = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            collsSemi = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)MonsterInfoStatsGridView).BeginInit();
             ((System.ComponentModel.ISupportInitialize)StatComboBox).BeginInit();
             ((System.ComponentModel.ISupportInitialize)MonsterInfoGridControl).BeginInit();
@@ -137,7 +138,7 @@
             MonsterInfoGridControl.Name = "MonsterInfoGridControl";
             MonsterInfoGridControl.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] { MonsterImageComboBox, StatComboBox, ItemLookUpEdit, RegionLookUpEdit });
             MonsterInfoGridControl.ShowOnlyPredefinedDetails = true;
-            MonsterInfoGridControl.Size = new System.Drawing.Size(775, 373);
+            MonsterInfoGridControl.Size = new System.Drawing.Size(761, 366);
             MonsterInfoGridControl.TabIndex = 2;
             MonsterInfoGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] { RespawnsGridView, DropsGridView, MonsterInfoGridView, MonsterInfoStatsGridView });
             // 
@@ -260,7 +261,7 @@
             // 
             // MonsterInfoGridView
             // 
-            MonsterInfoGridView.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] { colMonsterName, colImage, colAI, colLevel, colExperience, colViewRange, colCoolEye, colAttackDelay, colMoveDelay, colIsBoss, colUndead, gridColumn3, gridColumn4, gridColumn5, colFaceImage });
+            MonsterInfoGridView.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] { colMonsterName, colImage, colAI, colLevel, colExperience, colViewRange, colCoolEye, colAttackDelay, colMoveDelay, colIsBoss, colUndead, gridColumn3, gridColumn4, gridColumn5, colFaceImage, collsSemi });
             MonsterInfoGridView.GridControl = MonsterInfoGridControl;
             MonsterInfoGridView.Name = "MonsterInfoGridView";
             MonsterInfoGridView.OptionsDetail.AllowExpandEmptyDetails = true;
@@ -352,28 +353,28 @@
             colUndead.FieldName = "Undead";
             colUndead.Name = "colUndead";
             colUndead.Visible = true;
-            colUndead.VisibleIndex = 10;
+            colUndead.VisibleIndex = 11;
             // 
             // gridColumn3
             // 
             gridColumn3.FieldName = "CanPush";
             gridColumn3.Name = "gridColumn3";
             gridColumn3.Visible = true;
-            gridColumn3.VisibleIndex = 11;
+            gridColumn3.VisibleIndex = 12;
             // 
             // gridColumn4
             // 
             gridColumn4.FieldName = "CanTame";
             gridColumn4.Name = "gridColumn4";
             gridColumn4.Visible = true;
-            gridColumn4.VisibleIndex = 12;
+            gridColumn4.VisibleIndex = 13;
             // 
             // gridColumn5
             // 
             gridColumn5.FieldName = "Flag";
             gridColumn5.Name = "gridColumn5";
             gridColumn5.Visible = true;
-            gridColumn5.VisibleIndex = 13;
+            gridColumn5.VisibleIndex = 14;
             // 
             // colFaceImage
             // 
@@ -381,17 +382,17 @@
             colFaceImage.FieldName = "FaceImage";
             colFaceImage.Name = "colFaceImage";
             colFaceImage.Visible = true;
-            colFaceImage.VisibleIndex = 14;
+            colFaceImage.VisibleIndex = 15;
             // 
             // ribbon
             // 
             ribbon.ExpandCollapseItem.Id = 0;
-            ribbon.Items.AddRange(new DevExpress.XtraBars.BarItem[] { ribbon.ExpandCollapseItem, ribbon.SearchEditItem, SaveButton, ImportButton, ExportButton, UpdateMonsterImageButton });
+            ribbon.Items.AddRange(new DevExpress.XtraBars.BarItem[] { ribbon.ExpandCollapseItem, SaveButton, ImportButton, ExportButton, UpdateMonsterImageButton });
             ribbon.Location = new System.Drawing.Point(0, 0);
             ribbon.MaxItemId = 5;
             ribbon.Name = "ribbon";
             ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] { ribbonPage1 });
-            ribbon.Size = new System.Drawing.Size(775, 144);
+            ribbon.Size = new System.Drawing.Size(761, 144);
             // 
             // SaveButton
             // 
@@ -457,11 +458,18 @@
             ribbonPageGroup2.Name = "ribbonPageGroup2";
             ribbonPageGroup2.Text = "Monster Image";
             // 
+            // collsSemi
+            // 
+            collsSemi.FieldName = "IsSemi";
+            collsSemi.Name = "collsSemi";
+            collsSemi.Visible = true;
+            collsSemi.VisibleIndex = 10;
+            // 
             // MonsterInfoView
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            ClientSize = new System.Drawing.Size(775, 517);
+            ClientSize = new System.Drawing.Size(761, 510);
             Controls.Add(MonsterInfoGridControl);
             Controls.Add(ribbon);
             Name = "MonsterInfoView";
@@ -528,5 +536,6 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup JsonImportExport;
         private DevExpress.XtraBars.BarButtonItem UpdateMonsterImageButton;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
+        private DevExpress.XtraGrid.Columns.GridColumn collsSemi;
     }
 }

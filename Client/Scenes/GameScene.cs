@@ -146,6 +146,7 @@ namespace Client.Scenes
         public MainPanel MainPanel;
 
         public MenuDialog MenuBox;
+        public ChatNoticeDialog ChatNoticeBox;
         public DXConfigWindow ConfigBox;
         public CaptionDialog CaptionBox;
         public InventoryDialog InventoryBox;
@@ -405,6 +406,12 @@ namespace Client.Scenes
             {
                 Parent = this,
                 Visible = false,
+            };
+
+            ChatNoticeBox = new ChatNoticeDialog
+            {
+                Visible = false,
+                Parent = this,
             };
 
             CaptionBox = new CaptionDialog
@@ -713,6 +720,8 @@ namespace Client.Scenes
         {
             if (ConfigBox == null) return;
 
+            ChatNoticeBox.Location = new Point((Size.Width - ChatNoticeBox.Size.Width) / 2, (Size.Height - ChatNoticeBox.Size.Height) / 6);
+
             MenuBox.Location = new Point(Size.Width - MenuBox.Size.Width, Size.Height - MenuBox.Size.Height - MainPanel.Size.Height);
 
             ConfigBox.Location = new Point((Size.Width - ConfigBox.Size.Width)/2, (Size.Height - ConfigBox.Size.Height)/2);
@@ -788,6 +797,7 @@ namespace Client.Scenes
             FishingCatchBox.Location = new Point(((Size.Width - FishingCatchBox.Size.Width) / 2), ((Size.Height - FishingCatchBox.Size.Height) / 2) + 200);
 
             TimerBox.Location = new Point(Size.Width - 120, Size.Height - 180);
+
         }
 
         public void SaveChatTabs()
@@ -3912,6 +3922,9 @@ namespace Client.Scenes
 
         public void ReceiveChat(string message, MessageType type, List<ClientUserItem> linkedItems = null)
         {
+            if (type == MessageType.Notice)
+                ChatNoticeBox.ShowNotice(message, 0);
+
             if (Config.LogChat)
                 CEnvir.ChatLog.Enqueue($"[{Time.Now:F}]: {message}");
 

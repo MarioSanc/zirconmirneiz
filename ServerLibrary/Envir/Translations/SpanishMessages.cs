@@ -5,9 +5,9 @@ namespace Server.Envir.Translations
     [ConfigPath(@".\Translations\SpanishMessages.ini")]
     public class SpanishMessages : StringMessages
     {
-        public override string BannedWrongPassword { get; set; } = "Too many wrong password login attempts.";
+        public override string BannedWrongPassword { get; set; } = "Demasiados intentos de inicio de sesión con contraseña incorrecta.";
 
-        public override string PaymentComplete { get; set; } = "Your payment for {0} Game Gold was successful.";
+        public override string PaymentComplete { get; set; } = "Tu pago de {0} Game Gold se realizó correctamente.";
         public override string PaymentFailed { get; set; } = "You have been deduceted {0} Game Gold.";
         public override string ReferralPaymentComplete { get; set; } = "One of your referral's has purchased some game gold, You got a bonus of {0} Hunt Gold.";
         public override string ReferralPaymentFailed { get; set; } = "One of your referal's purchase has failed, You lost your bonus of {0} Hunt Gold.";
@@ -16,8 +16,8 @@ namespace Server.Envir.Translations
         public override string HuntGoldRefund { get; set; } = "Your {0} Hunt Gold was refunded.";
 
         public override string Welcome { get; set; } = "Bienvenidos al server mas corrupto del mundo. Pagame mucho por paypal y seras el mejor!";
-        public override string WelcomeObserver { get; set; } = "You are now Observing {0}, to stop, please logout.";
-        public override string ObserverChangeFail { get; set; } = "You cannot change observable mode unless you are in SafeZone";
+        public override string WelcomeObserver { get; set; } = "Ahora está observando {0}. Para detenerlo, cierre la sesión.";
+        public override string ObserverChangeFail { get; set; } = "No puedes cambiar el modo observable a menos que estés en SafeZone";
         public override string OnlineCount { get; set; } = "Users Online: {0}, Observers Online: {1}";
         public override string ObserverCount { get; set; } = "You currently have {0} observers.";
         public override string CannotFindPlayer { get; set; } = "Unable to find the player: {0}";

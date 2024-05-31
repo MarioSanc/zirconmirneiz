@@ -335,9 +335,31 @@ namespace Client.Scenes.Views
                     else
                         control.Controls[0].BackColour = colour;
 
+                    colour = Color.Yellow;
+
+                }
+
+                if (ob.MonsterInfo.IsSemi)
+                {
+                    size = new Size(5, 5);
+
+                    if (control.Controls.Count == 0) // This is disgusting but its cheap
+                    {
+                        new DXControl
+                        {
+                            Parent = control,
+                            Location = new Point(1, 1),
+                            BackColour = colour,
+                            DrawTexture = true,
+                            Size = new Size(3, 3)
+                        };
+                    }
+                    else
+                        control.Controls[0].BackColour = colour;
+
                     colour = Color.White;
 
-                } 
+                }
 
                 if (!string.IsNullOrEmpty(ob.PetOwner))
                 {
