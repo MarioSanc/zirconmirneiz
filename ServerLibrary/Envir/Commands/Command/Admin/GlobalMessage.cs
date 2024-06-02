@@ -17,8 +17,13 @@ namespace Server.Envir.Commands.Command.Admin
             if (vals.Length < PARAMS_LENGTH)
                 ThrowNewInvalidParametersException();
 
+            var Message = "";
+            for (int i = 1; i < vals.Length; i++)
+            {
+                Message += vals[i] + " ";
+            }
             foreach (SConnection con in SEnvir.Connections)
-                con.ReceiveChat(vals[1], MessageType.Notice);
+                con.ReceiveChat(Message, MessageType.Notice);
 
         }
     }

@@ -587,6 +587,24 @@ namespace Server.Models
                         }
                     }
 
+                    if (movement.NeedNoSpawn != null)
+                    {
+                        SpawnInfo spawn = SEnvir.Spawns.FirstOrDefault(x => x.Info == movement.NeedNoSpawn);
+
+                        if (spawn == null)
+                            break;
+
+                        if (spawn.AliveCount > 0)
+                        {
+                            player.Connection.ReceiveChat(player.Connection.Language.NeedMonster, MessageType.System);
+
+                            foreach (SConnection con in player.Connection.Observers)
+                                con.ReceiveChat(con.Language.NeedMonster, MessageType.System);
+
+                            break;
+                        }
+                    }
+
                     if (movement.NeedItem != null)
                     {
                         if (player.GetItemCount(movement.NeedItem) == 0)

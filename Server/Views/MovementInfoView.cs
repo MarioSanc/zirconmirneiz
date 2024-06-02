@@ -42,5 +42,10 @@ namespace Server.Views
         {
             JsonExporter.Export<MovementInfo>(MovementGridView);
         }
+
+        private void MovementGridControl_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

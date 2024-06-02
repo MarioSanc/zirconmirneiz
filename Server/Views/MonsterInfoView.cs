@@ -84,6 +84,11 @@ namespace Server.Views
 
             UpdateMonsterImageButton.Enabled = false;
         }
+
+        private void MonsterInfoGridControl_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 
     public enum OldMonsterImage

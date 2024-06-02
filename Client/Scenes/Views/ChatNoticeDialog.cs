@@ -12,11 +12,13 @@ namespace Client.Scenes.Views
     {
         public DXImageControl Layout;
         public DXLabel TextLabel;
-        public DXLabel TextLabel2;
-        public DateTime CurrentTime;
-        public int ViewTime;
-        public long Speed;
         public string message;
+        public DXControl Panel;
+
+        public DateTime SpawnTime;
+
+        public int TotalRepetitions = 2;
+        public int CurrentRepetitions = 0;
 
         public ChatNoticeDialog()
         {
@@ -26,43 +28,35 @@ namespace Client.Scenes.Views
             Sort = false;
             ImageOpacity = 0.3f;
 
+            Panel = new DXControl
+            {
+                Parent = this,
+            };
+            Panel.Size = new Size(Size.Width - 10, Size.Height);
+            Panel.Location = new Point(5, 0);
 
             TextLabel = new DXLabel
             {
                 Text = "",
                 Font = new Font(Config.FontName, CEnvir.FontSize(10f), FontStyle.Bold),
                 DrawFormat = TextFormatFlags.HorizontalCenter | TextFormatFlags.VerticalCenter,
-                Parent = this,
+                Parent = Panel,
                 IsControl = true,
-                Location = new Point(15, 3),
                 AutoSize = true,
                 ForeColour = Color.Yellow,
                 BorderColour = Color.Black,
             };
+            TextLabel.Location = new Point(Size.Width, 2);
 
-            TextLabel2 = new DXLabel
-            {
-                Text = "",
-                Font = new Font(Config.FontName, CEnvir.FontSize(15f), FontStyle.Bold),
-                DrawFormat = TextFormatFlags.HorizontalCenter | TextFormatFlags.VerticalCenter,
-                Parent = this,
-                IsControl = true,
-                Location = new Point(15, 3),
-                AutoSize = true,
-                ForeColour = Color.Yellow,
-                BorderColour = Color.Black,
-            };
-
-
-            DXImageControl dxImageControl = new DXImageControl
+            Layout = new DXImageControl
             {
                 Index = 6910,
                 LibraryFile = LibraryFile.GameInter,
-                Location = new Point(-2, -2),
                 Parent = this,
 
             };
-            Layout = dxImageControl;
+            Layout.Size = new Size(Size.Width, Size.Height);
+            Layout.Location = new Point(0, 0);
             AfterDraw += new EventHandler<EventArgs>(ChatNotice_AfterDraw);
         }
 
@@ -82,44 +76,43 @@ namespace Client.Scenes.Views
 
         private void ChatNotice_AfterDraw(object sender, EventArgs e)
         {
-            if (CurrentTime < CEnvir.Now)
-                Hide();
-            else if (CEnvir.Now.Ticks - Speed > 150000L)
+            var spawnElapsed = (int)Math.Floor((CEnvir.Now - SpawnTime).TotalMilliseconds);
+
+            if (spawnElapsed > 10)
             {
-                Speed = CEnvir.Now.Ticks;
-                if (TextLabel.Text.Length < 300)
+                TextLabel.Location = new Point(TextLabel.Location.X - 1, TextLabel.Location.Y);
+                SpawnTime = CEnvir.Now;
+            }
+
+            // Check if label reached the end of the parent container
+            if (TextLabel.Location.X + TextLabel.Size.Width < 0)
+            {
+                CurrentRepetitions += 1;
+
+                // If already repeated the desired number of times = dispose
+                // else move the label to the end of the parent container
+                if (CurrentRepetitions >= TotalRepetitions)
                 {
-                    DXLabel textLabel1 = TextLabel;
-                    textLabel1.Text = textLabel1.Text + " " + message;
-                    DXLabel textLabel2 = TextLabel2;
-                    textLabel2.Text = textLabel2.Text + " " + message;
+                    SpawnTime = CEnvir.Now;
+                    CurrentRepetitions = 0;
+                    Hide();
+                    //Dispose();
                 }
-                DXLabel textLabel1_1 = TextLabel;
-                DXLabel textLabel2_1 = TextLabel2;
-                Point point1 = new Point(TextLabel2.Location.X - 1, 3);
-                Point point2 = point1;
-                textLabel2_1.Location = point2;
-                Point point3 = point1;
-                textLabel1_1.Location = point3;
+                else
+                    TextLabel.Location = new Point(Size.Width, TextLabel.Location.Y);
             }
         }
 
         public void ShowNotice(string text, int type = 0)
         {
+            SpawnTime = CEnvir.Now;
+            CurrentRepetitions = 0;
+
             Index = type == 0 ? 6911 : 6913;
             Layout.Index = type == 0 ? 6910 : 6912;
-            message = TextLabel.Text = TextLabel2.Text = text;
+            message = TextLabel.Text = text;
             TextLabel.Visible = type == 0;
-            TextLabel2.Visible = type == 1;
-            DXLabel textLabel1 = TextLabel;
-            DXLabel textLabel2 = TextLabel2;
-            Point location = new Point(15, 3);
-            Point location2 = location;
-            textLabel2.Location = location2;
-            Point location3 = location;
-            textLabel1.Location = location3;
-            CurrentTime = CEnvir.Now.AddMilliseconds(20000.0);
-            Speed = CEnvir.Now.Ticks;
+            TextLabel.Location = new Point(Size.Width, TextLabel.Location.Y);
             Show();
         }
     }

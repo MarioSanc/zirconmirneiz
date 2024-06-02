@@ -68,6 +68,7 @@
             gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
             gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
             colFaceImage = new DevExpress.XtraGrid.Columns.GridColumn();
+            collsSemi = new DevExpress.XtraGrid.Columns.GridColumn();
             ribbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
             SaveButton = new DevExpress.XtraBars.BarButtonItem();
             ImportButton = new DevExpress.XtraBars.BarButtonItem();
@@ -77,7 +78,6 @@
             ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             JsonImportExport = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            collsSemi = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)MonsterInfoStatsGridView).BeginInit();
             ((System.ComponentModel.ISupportInitialize)StatComboBox).BeginInit();
             ((System.ComponentModel.ISupportInitialize)MonsterInfoGridControl).BeginInit();
@@ -141,6 +141,7 @@
             MonsterInfoGridControl.Size = new System.Drawing.Size(761, 366);
             MonsterInfoGridControl.TabIndex = 2;
             MonsterInfoGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] { RespawnsGridView, DropsGridView, MonsterInfoGridView, MonsterInfoStatsGridView });
+            MonsterInfoGridControl.Click += MonsterInfoGridControl_Click;
             // 
             // RespawnsGridView
             // 
@@ -384,6 +385,13 @@
             colFaceImage.Visible = true;
             colFaceImage.VisibleIndex = 15;
             // 
+            // collsSemi
+            // 
+            collsSemi.FieldName = "IsSemi";
+            collsSemi.Name = "collsSemi";
+            collsSemi.Visible = true;
+            collsSemi.VisibleIndex = 10;
+            // 
             // ribbon
             // 
             ribbon.ExpandCollapseItem.Id = 0;
@@ -457,13 +465,6 @@
             ribbonPageGroup2.ItemLinks.Add(UpdateMonsterImageButton);
             ribbonPageGroup2.Name = "ribbonPageGroup2";
             ribbonPageGroup2.Text = "Monster Image";
-            // 
-            // collsSemi
-            // 
-            collsSemi.FieldName = "IsSemi";
-            collsSemi.Name = "collsSemi";
-            collsSemi.Visible = true;
-            collsSemi.VisibleIndex = 10;
             // 
             // MonsterInfoView
             // 

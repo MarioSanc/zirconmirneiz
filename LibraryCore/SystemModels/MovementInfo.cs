@@ -81,6 +81,21 @@ namespace Library.SystemModels
         }
         private RespawnInfo _NeedSpawn;
 
+        public RespawnInfo NeedNoSpawn
+        {
+            get { return _NeedNoSpawn; }
+            set
+            {
+                if (_NeedNoSpawn == value) return;
+
+                var oldValue = _NeedNoSpawn;
+                _NeedNoSpawn = value;
+
+                OnChanged(oldValue, value, "NeedNoSpawn");
+            }
+        }
+        private RespawnInfo _NeedNoSpawn;
+
         public InstanceInfo NeedInstance
         {
             get { return _NeedInstance; }
