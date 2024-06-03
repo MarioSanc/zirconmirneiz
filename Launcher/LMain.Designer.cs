@@ -136,13 +136,15 @@
             // PatchNotesHyperlinkControl
             // 
             PatchNotesHyperlinkControl.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right;
+            PatchNotesHyperlinkControl.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            PatchNotesHyperlinkControl.Appearance.Options.UseFont = true;
             PatchNotesHyperlinkControl.Cursor = System.Windows.Forms.Cursors.Hand;
             PatchNotesHyperlinkControl.LineVisible = true;
-            PatchNotesHyperlinkControl.Location = new System.Drawing.Point(589, 328);
+            PatchNotesHyperlinkControl.Location = new System.Drawing.Point(107, 322);
             PatchNotesHyperlinkControl.Name = "PatchNotesHyperlinkControl";
-            PatchNotesHyperlinkControl.Size = new System.Drawing.Size(21, 13);
+            PatchNotesHyperlinkControl.Size = new System.Drawing.Size(488, 13);
             PatchNotesHyperlinkControl.TabIndex = 9;
-            PatchNotesHyperlinkControl.Text = "<href=http://www.google.com>Test</href>";
+            PatchNotesHyperlinkControl.Text = "Si quieres conseguir muchos GAME GOLD para comprar articulos de pago PINCHA AQUI!";
             PatchNotesHyperlinkControl.HyperlinkClick += PatchNotesHyperlinkControl_HyperlinkClick;
             PatchNotesHyperlinkControl.Click += PatchNotesHyperlinkControl_Click;
             // 

@@ -51,7 +51,18 @@ namespace Launcher
         private void PatchNotesHyperlinkControl_HyperlinkClick(object sender, DevExpress.Utils.HyperlinkClickEventArgs e)
         {
             PatchNotesHyperlinkControl.LinkVisited = true;
-            Process.Start(e.Link);
+            try
+            {
+                Process.Start(new ProcessStartInfo
+                {
+                    FileName = "https://i.ibb.co/tJ2SmdX/299676573-379688247689607-4015257652529704053-n.jpg",
+                    UseShellExecute = true
+                });
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Se produjo un error al intentar abrir el enlace: " + ex.Message);
+            }
         }
 
         private void RepairButton_Click(object sender, EventArgs e)

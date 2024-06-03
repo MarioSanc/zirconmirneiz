@@ -680,7 +680,7 @@ namespace Server.Models
         {
             if (SEnvir.Now <= DailyQuestTime) return;
 
-            DailyQuestTime = SEnvir.Now.AddSeconds(20);
+            DailyQuestTime = SEnvir.Now.AddSeconds(2);
 
             bool cancel = false;
 
