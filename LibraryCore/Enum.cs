@@ -810,7 +810,7 @@ namespace Library
         //NF_StoneBuilding25 = 25,
         //NF_StoneBuilding26 = 26,
         NumaElite = 27,
-        //NF_Phantom = 28,
+        GhostWoman = 28,
         CrimsonNecromancer = 29,
 
         Chicken = 30,
@@ -859,7 +859,7 @@ namespace Library
 
         ShellNipper = 70,
         VisceralWorm = 71,
-        //NF_RedVisceralWorm = 72,
+        EvilScorpion = 72,
         Beetle = 73,
         SpikedBeetle = 74,
         Wolf = 75,
@@ -908,11 +908,11 @@ namespace Library
         RedMoonTheFallen = 114,
         Larva = 115,
         ArachnidGazer = 116,
-        RedMoonGuardian = 117,
-        RedMoonProtector = 118,
-        //NF_RedMoonRedProtector = 119,
+        EvilApe = 117,
+        BlackEvilApe = 118,
+        RedEvilApe = 119,
 
-        //NF_RedMoonGrayProtector = 120,
+        GreenEvilApe = 120,
         VenomousArachnid = 121,
         DarkArachnid = 122,
         //NF_WoomyonGuard = 123,
@@ -928,11 +928,11 @@ namespace Library
         //NF_NumaAxeman = 132,
         //NF_Football = 133,
         //NF_HermitFemale = 134,
-        //NF_HermitMale = 135,
-        //NF_WhiteSnake = 136,
+        GreatWhiteSnake = 135,
+        WhiteSnake = 136,
         ChestnutTree = 137,
         NumaGrunt = 138,
-        //NF_NumaWarrior = 139,
+        NumaWarrior = 139,
 
         BanyaRightGuard = 140,
         BanyaLeftGuard = 141,
@@ -980,22 +980,23 @@ namespace Library
 
         IcyGoddess = 180,
         WildBoar = 181,
-        //NF_AngelGuardian = 182,
+        GuardianAngel = 182,
         //NF_Blank183 = 183,
-        //NF_NumaElder = 184,
+        NumaElder = 184,
         //NF_Blank185 = 185,
         //NF_Blank186 = 186,
-        //NF_NumaPriest = 187,
+        NumaPriest = 187,
         //NF_Blank188 = 188,
         //NF_BonePile189 = 189,
 
+        // Mon_19
         NumaCavalry = 190,
         NumaArmoredSoldier = 191,
         //NF_NumaAxeSoldier = 192,
         NumaStoneThrower = 193,
         NumaHighMage = 194,
         NumaRoyalGuard = 195,
-        //NF_NumaWarlord = 196,
+        NumaKing = 196,
         BloodStone = 197,
         //NF_Chest = 198,
         //NF_BonePile199 = 199,
@@ -1074,27 +1075,28 @@ namespace Library
         EnshrinementBox = 275,
         //NF_AssassinMale = 276,
         //NF_AssassinFemale = 277,
-        //NF_UmaMaceSoldier = 278,
+        UmaMaceSoldier = 278,
         //NF_Blank279 = 279,
 
         Salamander = 280,
         SandGolem = 281,
-        //NF_NumaLoneGuard = 282,
-        //NF_SmallSpider = 283,
-        //NF_OmaInfant = 284,
-        //NF_Yob = 285,
-        //NF_RakingCat = 286,
-        //NF_UmaTrident = 287,
+        NumaLoneGuard = 282,
+        SmallAnt = 283,
+        OmaInfant = 284,
+        Yob = 285,
+        RakingCat = 286,
+        UmaTrident = 287,
         GangSpider = 288,
         VenomSpider = 289,
 
+        //Mon29
         SDMob4 = 290,
         SDMob5 = 291,
         SDMob6 = 292,
         //NF_SpiritSpider = 293,
         //NF_DarkMage = 294,
         //NF_Lizard = 295,
-        //NF_DarkDevil = 296,
+        AcientZuma = 296,
         //NF_NumaSoldier = 297,
         SDMob7 = 298,
         OmaMage = 299,
@@ -1193,7 +1195,7 @@ namespace Library
         //NF_Nameless408 = 408,
         //NF_Nameless409 = 409,
 
-        //NF_Nameless410 = 410,
+        VenomEvilCobra = 410,
         DustDevil = 411,
         TwinTailScorpion = 412,
         BloodyMole = 413,
@@ -1201,7 +1203,7 @@ namespace Library
         //NF_Nameless415 = 415,
         //NF_Nameless416 = 416,
         //NF_Nameless417 = 417,
-        //NF_Blank418 = 418,
+        BlackSnake = 418,
         //NF_Blank419 = 419,
 
         //NF_HellVampire = 420,
@@ -1225,24 +1227,24 @@ namespace Library
         SDMob21 = 445,
         SDMob22 = 446,
         SDMob23 = 447,
-        SDMob24 = 448,
-        SDMob25 = 449,
+        ArmoredToad = 448,
+        ThugToad = 449,
 
-        SDMob26 = 450,
+        Chubarak = 450,
         LobsterLord = 453,
 
         //Mon46
 
         NewMob1 = 470,
         NewMob2 = 471,
-        NewMob3 = 472,
-        NewMob4 = 473,
-        NewMob5 = 474,
+        BlueCrystalBat = 472,
+        BlueCrystalGolem = 473,
+        GoldCrystalGolem = 474,
         NewMob6 = 475,
         NewMob7 = 476,
-        NewMob8 = 477,
-        NewMob9 = 478,
-        NewMob10 = 479,
+        YellowRockyTurtle = 477,
+        BabyRockyTortoise = 478,
+        DeadTree = 479,
 
         //Mon48
 
@@ -1269,13 +1271,91 @@ namespace Library
 
         //Mon55
 
+        //Mon56
+        DrumMinotaur = 563,
+        BladeMinotaur = 564,
+        KanaboMinotaur = 565,
         Tornado = 566,
+        BullStatue = 567,
+
+        //Mon58
+        SavageElephantRider = 590,
+        SavageShaman = 591,
+        SavageRhinoRider = 592,
+        BlackWingedBeast = 593,
+
+        //Mon59
+        BlueMutantPlant = 600,
+        IcyReindeer = 601,
+        IcyGiant = 602,
+        BlackBear = 603,
+        IcyBlueDragon = 604,
+
+        // Mon60
+        WingedYellowLizard = 610,
+        RamWarrior = 611,
+        Uruloki = 612,
+        KameAruji = 613,
+        EvilGolem = 614,
+        FrostLancer = 615,
+        DemonValkyrie = 616,
+        HammerGiant = 617,
+        EvilNipper = 618,
+        Garuda = 619,
+
+        //Mon61
+        HighOmaShaman = 620,
+        HighOmaBat = 621,
+        HighOmaFighter = 622,
+        HighOmaWarrior = 623,
+        HighOmaSword = 624,
+        HighOmaAxe = 625,
+        HighOmaKing = 626,
+        GreatEvilSpider = 627,
+        DeathCommander = 628,
+        EvilAbomination = 629,
+
+        //Mon62
+        SerpentGoddess = 630,
+        RedIronGuardian = 631,
+        BlueIronGuardian = 632,
+        GreatMutantFrog = 633,
+        BigMutantFish = 634,
+        GoldWarrior = 635,
+        ShadowFireDemon = 636,
+        WingedGoldWarrior = 637,
+        GreatCat = 638,
+        EvilVampir = 639,
+
+        //Mon63
+        NineTailedFox = 640,
+        EvilMirDragon = 641,
+        Ryu = 642,
+        GreatUnicorn = 643,
+        EvilGargoyle = 644,
+        SixWingedDemon = 645,
+        DemonBloodLord = 646,
+        DarkEnt = 647,
+        OrochiMounted = 648,
+        Nazgul = 649,
+
+        //Mon64
+        FireAxeDevil = 650,
+        ScorpionAxeDevil = 651,
+        DemonPriestess = 652,
+        KameSemi = 653,
+        JotunGiant = 654,
+        MinoTaurus = 655,
+        SandStoneDragon = 656,
+        AbyssDemon = 657,
+        Kraken = 658,
+        StoneEye = 659,
 
         //Flag
         CastleFlag = 1000
     }
 
-   
+
     public enum MapIcon
     {
         None,
