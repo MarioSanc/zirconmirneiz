@@ -171,6 +171,20 @@ namespace Client.Models
                     StruckSound = SoundIndex.CowStruck;
                     DieSound = SoundIndex.CowDie;
                     break;
+                case MonsterImage.GreatWhiteSnake:
+                    CEnvir.LibraryList.TryGetValue(LibraryFile.Mon_13, out BodyLibrary);
+                    BodyShape = 5;
+                    AttackSound = SoundIndex.TigerSnakeAttack;
+                    StruckSound = SoundIndex.TigerSnakeStruck;
+                    DieSound = SoundIndex.TigerSnakeDie;
+                    break;
+                case MonsterImage.WhiteSnake:
+                    CEnvir.LibraryList.TryGetValue(LibraryFile.Mon_13, out BodyLibrary);
+                    BodyShape = 6;
+                    AttackSound = SoundIndex.TigerSnakeAttack;
+                    StruckSound = SoundIndex.TigerSnakeStruck;
+                    DieSound = SoundIndex.TigerSnakeDie;
+                    break;
                 case MonsterImage.Sheep:
                     CEnvir.LibraryList.TryGetValue(LibraryFile.Mon_6, out BodyLibrary);
                     BodyShape = 8;
@@ -227,6 +241,13 @@ namespace Client.Models
                     StruckSound = SoundIndex.OmaStruck;
                     DieSound = SoundIndex.OmaDie;
                     break;
+                case MonsterImage.RedSnake:
+                    CEnvir.LibraryList.TryGetValue(LibraryFile.Mon_6, out BodyLibrary);
+                    BodyShape = 4;
+                    AttackSound = SoundIndex.TigerSnakeAttack;
+                    StruckSound = SoundIndex.TigerSnakeStruck;
+                    DieSound = SoundIndex.TigerSnakeDie;
+                    break;
                 case MonsterImage.TigerSnake:
                     CEnvir.LibraryList.TryGetValue(LibraryFile.Mon_6, out BodyLibrary);
                     BodyShape = 7;
@@ -240,7 +261,7 @@ namespace Client.Models
                     AttackSound = SoundIndex.SpittingSpiderAttack;
                     StruckSound = SoundIndex.SpittingSpiderStruck;
                     DieSound = SoundIndex.SpittingSpiderDie;
-                    
+
                     break;
                 case MonsterImage.Scarecrow:
                     CEnvir.LibraryList.TryGetValue(LibraryFile.Mon_5, out BodyLibrary);
@@ -315,7 +336,7 @@ namespace Client.Models
                     AttackSound = SoundIndex.CaveMaggotAttack;
                     StruckSound = SoundIndex.CaveMaggotStruck;
                     DieSound = SoundIndex.CaveMaggotDie;
-                    
+
                     break;
                 case MonsterImage.GhostSorcerer:
                     CEnvir.LibraryList.TryGetValue(LibraryFile.Mon_5, out BodyLibrary);
@@ -403,6 +424,7 @@ namespace Client.Models
                     StruckSound = SoundIndex.KeratoidStruck;
                     DieSound = SoundIndex.KeratoidDie;
                     break;
+                //Mon7
                 case MonsterImage.ShellNipper:
                     CEnvir.LibraryList.TryGetValue(LibraryFile.Mon_7, out BodyLibrary);
                     BodyShape = 0;
@@ -416,6 +438,13 @@ namespace Client.Models
                     AttackSound = SoundIndex.VisceralWormAttack;
                     StruckSound = SoundIndex.VisceralWormStruck;
                     DieSound = SoundIndex.VisceralWormDie;
+                    break;
+                case MonsterImage.EvilScorpion:
+                    CEnvir.LibraryList.TryGetValue(LibraryFile.Mon_7, out BodyLibrary);
+                    BodyShape = 2;
+                    AttackSound = SoundIndex.ClawSerpentAttack;
+                    StruckSound = SoundIndex.ClawSerpentStruck;
+                    DieSound = SoundIndex.ClawSerpentDie;
                     break;
                 case MonsterImage.MutantFlea:
                     CEnvir.LibraryList.TryGetValue(LibraryFile.Mon_15, out BodyLibrary);
@@ -574,21 +603,35 @@ namespace Client.Models
                     BodyShape = 5;
                     AttackSound = SoundIndex.LarvaAttack;
                     StruckSound = SoundIndex.LarvaStruck;
-                    
+
                     foreach (KeyValuePair<MirAnimation, Frame> frame in FrameSet.Larva)
                         Frames[frame.Key] = frame.Value;
                     break;
 
-                case MonsterImage.RedMoonGuardian:
+                case MonsterImage.EvilApe:
                     CEnvir.LibraryList.TryGetValue(LibraryFile.Mon_11, out BodyLibrary);
                     BodyShape = 7;
                     AttackSound = SoundIndex.RedMoonGuardianAttack;
                     StruckSound = SoundIndex.RedMoonGuardianStruck;
                     DieSound = SoundIndex.RedMoonGuardianDie;
                     break;
-                case MonsterImage.RedMoonProtector:
+                case MonsterImage.BlackEvilApe:
                     CEnvir.LibraryList.TryGetValue(LibraryFile.Mon_11, out BodyLibrary);
                     BodyShape = 8;
+                    AttackSound = SoundIndex.RedMoonProtectorAttack;
+                    StruckSound = SoundIndex.RedMoonProtectorStruck;
+                    DieSound = SoundIndex.RedMoonProtectorDie;
+                    break;
+                case MonsterImage.RedEvilApe:
+                    CEnvir.LibraryList.TryGetValue(LibraryFile.Mon_11, out BodyLibrary);
+                    BodyShape = 8;
+                    AttackSound = SoundIndex.RedMoonProtectorAttack;
+                    StruckSound = SoundIndex.RedMoonProtectorStruck;
+                    DieSound = SoundIndex.RedMoonProtectorDie;
+                    break;
+                case MonsterImage.GreenEvilApe:
+                    CEnvir.LibraryList.TryGetValue(LibraryFile.Mon_12, out BodyLibrary);
+                    BodyShape = 0;
                     AttackSound = SoundIndex.RedMoonProtectorAttack;
                     StruckSound = SoundIndex.RedMoonProtectorStruck;
                     DieSound = SoundIndex.RedMoonProtectorDie;
@@ -707,13 +750,20 @@ namespace Client.Models
                     StruckSound = SoundIndex.NumaGruntStruck;
                     DieSound = SoundIndex.NumaGruntDie;
                     break;
+                case MonsterImage.NumaWarrior:
+                    CEnvir.LibraryList.TryGetValue(LibraryFile.Mon_13, out BodyLibrary);
+                    BodyShape = 9;
+                    AttackSound = SoundIndex.NumaGruntAttack;
+                    StruckSound = SoundIndex.NumaGruntStruck;
+                    DieSound = SoundIndex.NumaGruntDie;
+                    break;
                 case MonsterImage.NumaMage:
                     CEnvir.LibraryList.TryGetValue(LibraryFile.Mon_2, out BodyLibrary);
                     BodyShape = 3;
                     AttackSound = SoundIndex.NumaMageAttack;
                     StruckSound = SoundIndex.NumaMageStruck;
                     DieSound = SoundIndex.NumaMageDie;
-                    
+
                     foreach (KeyValuePair<MirAnimation, Frame> frame in FrameSet.NumaMage)
                         Frames[frame.Key] = frame.Value;
                     break;
@@ -723,6 +773,13 @@ namespace Client.Models
                     AttackSound = SoundIndex.NumaEliteAttack;
                     StruckSound = SoundIndex.NumaEliteStruck;
                     DieSound = SoundIndex.NumaEliteDie;
+                    break;
+                case MonsterImage.GhostWoman:
+                    CEnvir.LibraryList.TryGetValue(LibraryFile.Mon_2, out BodyLibrary);
+                    BodyShape = 8;
+                    AttackSound = SoundIndex.VoraciousGhostAttack;
+                    StruckSound = SoundIndex.VoraciousGhostStruck;
+                    DieSound = SoundIndex.VoraciousGhostDie;
                     break;
                 case MonsterImage.SandShark:
                     CEnvir.LibraryList.TryGetValue(LibraryFile.Mon_10, out BodyLibrary);
@@ -769,7 +826,7 @@ namespace Client.Models
                     StruckSound = SoundIndex.RagingLizardStruck;
                     DieSound = SoundIndex.RagingLizardDie;
                     break;
-                    
+
                 case MonsterImage.SawToothLizard:
                     CEnvir.LibraryList.TryGetValue(LibraryFile.Mon_20, out BodyLibrary);
                     BodyShape = 2;
@@ -996,7 +1053,7 @@ namespace Client.Models
                     StruckSound = SoundIndex.RazorTuskStruck;
                     DieSound = SoundIndex.RazorTuskDie;
                     break;
-                    
+
 
                 case MonsterImage.PinkGoddess:
                     CEnvir.LibraryList.TryGetValue(LibraryFile.Mon_17, out BodyLibrary);
@@ -1078,7 +1135,7 @@ namespace Client.Models
                         DieSound = SoundIndex.ShinsuSmallDie;
                     }
                     break;
-                    
+
                 case MonsterImage.CorpseStalker:
                     CEnvir.LibraryList.TryGetValue(LibraryFile.Mon_2, out BodyLibrary);
                     BodyShape = 2;
@@ -1139,7 +1196,7 @@ namespace Client.Models
                     CEnvir.LibraryList.TryGetValue(LibraryFile.Mon_2, out BodyLibrary);
                     BodyShape = 0;
                     AttackSound = SoundIndex.ChaosKnightAttack;
-                  //  StruckSound = SoundIndex.ChaosKnightStruck;
+                    //  StruckSound = SoundIndex.ChaosKnightStruck;
                     DieSound = SoundIndex.ChaosKnightDie;
 
                     foreach (KeyValuePair<MirAnimation, Frame> frame in FrameSet.BanyaGuard)
@@ -1155,7 +1212,7 @@ namespace Client.Models
                     foreach (KeyValuePair<MirAnimation, Frame> frame in FrameSet.PachonTheChaosBringer)
                         Frames[frame.Key] = frame.Value;
                     break;
-                    
+
                 case MonsterImage.NumaCavalry:
                     CEnvir.LibraryList.TryGetValue(LibraryFile.Mon_19, out BodyLibrary);
                     BodyShape = 0;
@@ -1203,7 +1260,18 @@ namespace Client.Models
                     foreach (KeyValuePair<MirAnimation, Frame> frame in FrameSet.BanyaGuard)
                         Frames[frame.Key] = frame.Value;
                     break;
-                    
+
+                case MonsterImage.NumaKing:
+                    CEnvir.LibraryList.TryGetValue(LibraryFile.Mon_19, out BodyLibrary);
+                    BodyShape = 6;
+                    AttackSound = SoundIndex.NumaArmoredSoldierAttack;
+                    StruckSound = SoundIndex.NumaArmoredSoldierStruck;
+                    DieSound = SoundIndex.NumaArmoredSoldierDie;
+
+                    foreach (KeyValuePair<MirAnimation, Frame> frame in FrameSet.NumaKing)
+                        Frames[frame.Key] = frame.Value;
+                    break;
+
                 case MonsterImage.IcyRanger:
                     CEnvir.LibraryList.TryGetValue(LibraryFile.Mon_21, out BodyLibrary);
                     BodyShape = 0;
@@ -1290,6 +1358,27 @@ namespace Client.Models
                     AttackSound = SoundIndex.WildBoarAttack;
                     StruckSound = SoundIndex.WildBoarStruck;
                     DieSound = SoundIndex.WildBoarDie;
+                    break;
+                case MonsterImage.GuardianAngel:
+                    CEnvir.LibraryList.TryGetValue(LibraryFile.Mon_18, out BodyLibrary);
+                    BodyShape = 2;
+                    AttackSound = SoundIndex.JinchonDevilAttack;
+                    StruckSound = SoundIndex.JinchonDevilStruck;
+                    DieSound = SoundIndex.JinchonDevilDie;
+                    break;
+                case MonsterImage.NumaElder:
+                    CEnvir.LibraryList.TryGetValue(LibraryFile.Mon_18, out BodyLibrary);
+                    BodyShape = 4;
+                    AttackSound = SoundIndex.NumaGruntAttack;
+                    StruckSound = SoundIndex.NumaGruntStruck;
+                    DieSound = SoundIndex.NumaGruntDie;
+                    break;
+                case MonsterImage.NumaPriest:
+                    CEnvir.LibraryList.TryGetValue(LibraryFile.Mon_18, out BodyLibrary);
+                    BodyShape = 7;
+                    AttackSound = SoundIndex.NumaGruntAttack;
+                    StruckSound = SoundIndex.NumaGruntStruck;
+                    DieSound = SoundIndex.NumaGruntDie;
                     break;
                 case MonsterImage.JinamStoneGate:
                     CEnvir.LibraryList.TryGetValue(LibraryFile.Mon_23, out BodyLibrary);
@@ -1652,6 +1741,13 @@ namespace Client.Models
                     foreach (KeyValuePair<MirAnimation, Frame> frame in FrameSet.SamaSorcerer)
                         Frames[frame.Key] = frame.Value;
                     break;
+                case MonsterImage.UmaMaceSoldier:
+                    CEnvir.LibraryList.TryGetValue(LibraryFile.Mon_27, out BodyLibrary);
+                    BodyShape = 8;
+                    AttackSound = SoundIndex.UmaAnguisherAttack;
+                    StruckSound = SoundIndex.UmaAnguisherStruck;
+                    DieSound = SoundIndex.UmaAnguisherDie;
+                    break;
 
                 case MonsterImage.OrangeTiger:
                     CEnvir.LibraryList.TryGetValue(LibraryFile.Mon_35, out BodyLibrary);
@@ -1740,10 +1836,11 @@ namespace Client.Models
                     CEnvir.LibraryList.TryGetValue(LibraryFile.Mon_9, out BodyLibrary);
                     BodyShape = 0;
 
-                     AttackSound = SoundIndex.ClawSerpentAttack;
-                     StruckSound = SoundIndex.ClawSerpentStruck;
-                     DieSound = SoundIndex.ClawSerpentDie;
+                    AttackSound = SoundIndex.ClawSerpentAttack;
+                    StruckSound = SoundIndex.ClawSerpentStruck;
+                    DieSound = SoundIndex.ClawSerpentDie;
                     break;
+                //Mon28
                 case MonsterImage.Salamander:
                     CEnvir.LibraryList.TryGetValue(LibraryFile.Mon_28, out BodyLibrary);
                     BodyShape = 0;
@@ -1755,6 +1852,54 @@ namespace Client.Models
 
                     foreach (KeyValuePair<MirAnimation, Frame> frame in FrameSet.SDMob3)
                         Frames[frame.Key] = frame.Value;
+                    break;
+                case MonsterImage.NumaLoneGuard:
+                    CEnvir.LibraryList.TryGetValue(LibraryFile.Mon_28, out BodyLibrary);
+                    BodyShape = 2;
+                    AttackSound = SoundIndex.NumaEliteAttack;
+                    StruckSound = SoundIndex.NumaEliteStruck;
+                    DieSound = SoundIndex.NumaEliteDie;
+
+                    break;
+                case MonsterImage.SmallAnt:
+                    CEnvir.LibraryList.TryGetValue(LibraryFile.Mon_28, out BodyLibrary);
+                    BodyShape = 3;
+                    AttackSound = SoundIndex.AntNeedlerAttack;
+                    StruckSound = SoundIndex.AntNeedlerStruck;
+                    DieSound = SoundIndex.AntNeedlerDie;
+
+                    break;
+                case MonsterImage.OmaInfant:
+                    CEnvir.LibraryList.TryGetValue(LibraryFile.Mon_28, out BodyLibrary);
+                    BodyShape = 4;
+                    AttackSound = SoundIndex.OmaAttack;
+                    StruckSound = SoundIndex.OmaStruck;
+                    DieSound = SoundIndex.OmaDie;
+
+                    break;
+                case MonsterImage.Yob:
+                    CEnvir.LibraryList.TryGetValue(LibraryFile.Mon_28, out BodyLibrary);
+                    BodyShape = 5;
+                    AttackSound = SoundIndex.BlackTortoiseAttack;
+                    StruckSound = SoundIndex.BlackTortoiseStruck;
+                    DieSound = SoundIndex.BlackTortoiseDie;
+
+                    break;
+                case MonsterImage.RakingCat:
+                    CEnvir.LibraryList.TryGetValue(LibraryFile.Mon_28, out BodyLibrary);
+                    BodyShape = 6;
+                    AttackSound = SoundIndex.ClawCatAttack;
+                    StruckSound = SoundIndex.ClawCatStruck;
+                    DieSound = SoundIndex.ClawCatDie;
+
+                    break;
+                case MonsterImage.UmaTrident:
+                    CEnvir.LibraryList.TryGetValue(LibraryFile.Mon_28, out BodyLibrary);
+                    BodyShape = 7;
+                    AttackSound = SoundIndex.UmaAnguisherAttack;
+                    StruckSound = SoundIndex.UmaAnguisherStruck;
+                    DieSound = SoundIndex.UmaAnguisherDie;
+
                     break;
                 case MonsterImage.SDMob4:
                     CEnvir.LibraryList.TryGetValue(LibraryFile.Mon_29, out BodyLibrary);
@@ -1771,6 +1916,15 @@ namespace Client.Models
                     BodyShape = 2;
 
                     break;
+
+                case MonsterImage.AcientZuma:
+                    CEnvir.LibraryList.TryGetValue(LibraryFile.Mon_29, out BodyLibrary);
+                    BodyShape = 6;
+                    AttackSound = SoundIndex.ZumaKingAttack;
+                    StruckSound = SoundIndex.ZumaKingStruck;
+                    DieSound = SoundIndex.ZumaKingDie;
+                    break;
+
                 case MonsterImage.SDMob7:
                     CEnvir.LibraryList.TryGetValue(LibraryFile.Mon_29, out BodyLibrary);
                     BodyShape = 8;
@@ -1781,7 +1935,7 @@ namespace Client.Models
                     BodyShape = 9;
 
                     foreach (KeyValuePair<MirAnimation, Frame> frame in FrameSet.SDMob8)
-                        Frames[frame.Key] = frame.Value; 
+                        Frames[frame.Key] = frame.Value;
                     break;
                 case MonsterImage.SDMob9:
                     CEnvir.LibraryList.TryGetValue(LibraryFile.Mon_32, out BodyLibrary);
@@ -1816,37 +1970,55 @@ namespace Client.Models
                 case MonsterImage.CrystalGolem:
                     CEnvir.LibraryList.TryGetValue(LibraryFile.Mon_40, out BodyLibrary);
                     BodyShape = 0;
-                     
 
-                     foreach (KeyValuePair<MirAnimation, Frame> frame in FrameSet.SDMob15)
-                         Frames[frame.Key] = frame.Value;
+
+                    foreach (KeyValuePair<MirAnimation, Frame> frame in FrameSet.SDMob15)
+                        Frames[frame.Key] = frame.Value;
+                    break;
+                case MonsterImage.VenomEvilCobra:
+                    CEnvir.LibraryList.TryGetValue(LibraryFile.Mon_41, out BodyLibrary);
+                    BodyShape = 0;
+                    AttackSound = SoundIndex.TigerSnakeAttack;
+                    StruckSound = SoundIndex.TigerSnakeStruck;
+                    DieSound = SoundIndex.TigerSnakeDie;
+
+                    foreach (KeyValuePair<MirAnimation, Frame> frame in FrameSet.VenomEvilCobra)
+                        Frames[frame.Key] = frame.Value;
                     break;
                 case MonsterImage.DustDevil:
                     CEnvir.LibraryList.TryGetValue(LibraryFile.Mon_41, out BodyLibrary);
                     BodyShape = 1;
 
 
-                     foreach (KeyValuePair<MirAnimation, Frame> frame in FrameSet.SDMob16)
-                         Frames[frame.Key] = frame.Value;
+                    foreach (KeyValuePair<MirAnimation, Frame> frame in FrameSet.SDMob16)
+                        Frames[frame.Key] = frame.Value;
                     break;
                 case MonsterImage.TwinTailScorpion:
                     CEnvir.LibraryList.TryGetValue(LibraryFile.Mon_41, out BodyLibrary);
                     BodyShape = 2;
 
 
-                     foreach (KeyValuePair<MirAnimation, Frame> frame in FrameSet.SDMob17)
-                         Frames[frame.Key] = frame.Value;
+                    foreach (KeyValuePair<MirAnimation, Frame> frame in FrameSet.SDMob17)
+                        Frames[frame.Key] = frame.Value;
                     break;
                 case MonsterImage.BloodyMole:
                     CEnvir.LibraryList.TryGetValue(LibraryFile.Mon_41, out BodyLibrary);
                     BodyShape = 3;
-                    
+
 
                     foreach (KeyValuePair<MirAnimation, Frame> frame in FrameSet.SDMob18)
                         Frames[frame.Key] = frame.Value;
                     break;
+                case MonsterImage.BlackSnake:
+                    CEnvir.LibraryList.TryGetValue(LibraryFile.Mon_41, out BodyLibrary);
+                    BodyShape = 8;
+                    AttackSound = SoundIndex.TigerSnakeAttack;
+                    StruckSound = SoundIndex.TigerSnakeStruck;
+                    DieSound = SoundIndex.TigerSnakeDie;
+
+                    break;
                 case MonsterImage.SDMob19:
-                    CEnvir.LibraryList.TryGetValue(LibraryFile.Mon_44, out BodyLibrary); 
+                    CEnvir.LibraryList.TryGetValue(LibraryFile.Mon_44, out BodyLibrary);
                     BodyShape = 3;
 
 
@@ -1882,21 +2054,21 @@ namespace Client.Models
                     foreach (KeyValuePair<MirAnimation, Frame> frame in FrameSet.SDMob23)
                         Frames[frame.Key] = frame.Value;
                     break;
-                case MonsterImage.SDMob24:
+                case MonsterImage.ArmoredToad:
                     CEnvir.LibraryList.TryGetValue(LibraryFile.Mon_44, out BodyLibrary);
                     BodyShape = 8;
 
                     foreach (KeyValuePair<MirAnimation, Frame> frame in FrameSet.SDMob24)
                         Frames[frame.Key] = frame.Value;
                     break;
-                case MonsterImage.SDMob25:
+                case MonsterImage.ThugToad:
                     CEnvir.LibraryList.TryGetValue(LibraryFile.Mon_44, out BodyLibrary);
                     BodyShape = 9;
 
                     foreach (KeyValuePair<MirAnimation, Frame> frame in FrameSet.SDMob25)
                         Frames[frame.Key] = frame.Value;
                     break;
-                case MonsterImage.SDMob26:
+                case MonsterImage.Chubarak:
                     CEnvir.LibraryList.TryGetValue(LibraryFile.Mon_45, out BodyLibrary);
                     BodyShape = 0;
 
@@ -1924,7 +2096,7 @@ namespace Client.Models
                 case MonsterImage.NewMob1:
                     CEnvir.LibraryList.TryGetValue(LibraryFile.Mon_47, out BodyLibrary);
                     BodyShape = 0;
-                    
+
                     break;
                 case MonsterImage.NewMob2:
                     CEnvir.LibraryList.TryGetValue(LibraryFile.Mon_47, out BodyLibrary);
@@ -1933,14 +2105,14 @@ namespace Client.Models
                     foreach (KeyValuePair<MirAnimation, Frame> frame in FrameSet.BobbitWorm)
                         Frames[frame.Key] = frame.Value;
                     break;
-                case MonsterImage.NewMob3:
+                case MonsterImage.BlueCrystalBat:
                     CEnvir.LibraryList.TryGetValue(LibraryFile.Mon_47, out BodyLibrary);
                     BodyShape = 2;
 
 
 
                     break;
-                case MonsterImage.NewMob4:
+                case MonsterImage.BlueCrystalGolem:
                     CEnvir.LibraryList.TryGetValue(LibraryFile.Mon_47, out BodyLibrary);
                     BodyShape = 3;
 
@@ -1950,7 +2122,7 @@ namespace Client.Models
                     foreach (KeyValuePair<MirAnimation, Frame> frame in FrameSet.LobsterLord)
                         Frames[frame.Key] = frame.Value;*/
                     break;
-                case MonsterImage.NewMob5:
+                case MonsterImage.GoldCrystalGolem:
                     CEnvir.LibraryList.TryGetValue(LibraryFile.Mon_47, out BodyLibrary);
                     BodyShape = 4;
 
@@ -1980,7 +2152,7 @@ namespace Client.Models
                     foreach (KeyValuePair<MirAnimation, Frame> frame in FrameSet.LobsterLord)
                         Frames[frame.Key] = frame.Value;*/
                     break;
-                case MonsterImage.NewMob8:
+                case MonsterImage.YellowRockyTurtle:
                     CEnvir.LibraryList.TryGetValue(LibraryFile.Mon_47, out BodyLibrary);
                     BodyShape = 7;
 
@@ -1990,7 +2162,7 @@ namespace Client.Models
                     foreach (KeyValuePair<MirAnimation, Frame> frame in FrameSet.LobsterLord)
                         Frames[frame.Key] = frame.Value;*/
                     break;
-                case MonsterImage.NewMob9:
+                case MonsterImage.BabyRockyTortoise:
                     CEnvir.LibraryList.TryGetValue(LibraryFile.Mon_47, out BodyLibrary);
                     BodyShape = 8;
 
@@ -2000,7 +2172,7 @@ namespace Client.Models
                     foreach (KeyValuePair<MirAnimation, Frame> frame in FrameSet.LobsterLord)
                         Frames[frame.Key] = frame.Value;*/
                     break;
-                case MonsterImage.NewMob10:
+                case MonsterImage.DeadTree:
                     CEnvir.LibraryList.TryGetValue(LibraryFile.Mon_47, out BodyLibrary);
                     BodyShape = 9;
 
@@ -2053,7 +2225,7 @@ namespace Client.Models
                     //Fuckjed up Mob
 
                     break;
-                    case MonsterImage.Terracotta1:
+                case MonsterImage.Terracotta1:
                     CEnvir.LibraryList.TryGetValue(LibraryFile.Mon_42, out BodyLibrary);
                     BodyShape = 4;
                     AttackSound = SoundIndex.Terracotta1Attack;
@@ -2125,6 +2297,40 @@ namespace Client.Models
 
                     break;
 
+                // Mon56
+                case MonsterImage.DrumMinotaur:
+                    CEnvir.LibraryList.TryGetValue(LibraryFile.Mon_56, out BodyLibrary);
+                    BodyShape = 3;
+                    AttackSound = SoundIndex.MinotaurAttack;
+                    StruckSound = SoundIndex.MinotaurStruck;
+                    DieSound = SoundIndex.MinotaurDie;
+
+                    foreach (KeyValuePair<MirAnimation, Frame> frame in FrameSet.DrumMinotaur)
+                        Frames[frame.Key] = frame.Value;
+
+                    break;
+                case MonsterImage.BladeMinotaur:
+                    CEnvir.LibraryList.TryGetValue(LibraryFile.Mon_56, out BodyLibrary);
+                    BodyShape = 4;
+                    AttackSound = SoundIndex.MinotaurAttack;
+                    StruckSound = SoundIndex.MinotaurStruck;
+                    DieSound = SoundIndex.MinotaurDie;
+
+                    foreach (KeyValuePair<MirAnimation, Frame> frame in FrameSet.BladeMinotaur)
+                        Frames[frame.Key] = frame.Value;
+
+                    break;
+                case MonsterImage.KanaboMinotaur:
+                    CEnvir.LibraryList.TryGetValue(LibraryFile.Mon_56, out BodyLibrary);
+                    BodyShape = 5;
+                    AttackSound = SoundIndex.MinotaurAttack;
+                    StruckSound = SoundIndex.MinotaurStruck;
+                    DieSound = SoundIndex.MinotaurDie;
+
+                    foreach (KeyValuePair<MirAnimation, Frame> frame in FrameSet.KanaboMinotaur)
+                        Frames[frame.Key] = frame.Value;
+
+                    break;
                 case MonsterImage.Tornado:
                     CEnvir.LibraryList.TryGetValue(LibraryFile.Mon_56, out BodyLibrary);
                     BodyShape = 6;
@@ -2133,6 +2339,528 @@ namespace Client.Models
                         Frames[frame.Key] = frame.Value;
 
                     break;
+                case MonsterImage.BullStatue:
+                    CEnvir.LibraryList.TryGetValue(LibraryFile.Mon_56, out BodyLibrary);
+                    BodyShape = 7;
+
+                    foreach (KeyValuePair<MirAnimation, Frame> frame in FrameSet.BullStatue)
+                        Frames[frame.Key] = frame.Value;
+
+                    break;
+                // Mon58
+                case MonsterImage.SavageElephantRider:
+                    CEnvir.LibraryList.TryGetValue(LibraryFile.Mon_58, out BodyLibrary);
+                    BodyShape = 0;
+                    AttackSound = SoundIndex.EvilElephantAttack;
+                    StruckSound = SoundIndex.EvilElephantStruck;
+                    DieSound = SoundIndex.EvilElephantDie;
+
+                    foreach (KeyValuePair<MirAnimation, Frame> frame in FrameSet.SavageElephantRider)
+                        Frames[frame.Key] = frame.Value;
+                    break;
+                case MonsterImage.SavageShaman:
+                    CEnvir.LibraryList.TryGetValue(LibraryFile.Mon_58, out BodyLibrary);
+                    BodyShape = 1;
+                    AttackSound = SoundIndex.NumaHighMageAttack;
+                    StruckSound = SoundIndex.NumaHighMageStruck;
+                    DieSound = SoundIndex.NumaHighMageDie;
+
+                    foreach (KeyValuePair<MirAnimation, Frame> frame in FrameSet.SavageShaman)
+                        Frames[frame.Key] = frame.Value;
+                    break;
+                case MonsterImage.SavageRhinoRider:
+                    CEnvir.LibraryList.TryGetValue(LibraryFile.Mon_58, out BodyLibrary);
+                    BodyShape = 2;
+                    AttackSound = SoundIndex.NumaCavalryAttack;
+                    StruckSound = SoundIndex.NumaCavalryStruck;
+                    DieSound = SoundIndex.NumaCavalryDie;
+
+                    foreach (KeyValuePair<MirAnimation, Frame> frame in FrameSet.SavageRhinoRider)
+                        Frames[frame.Key] = frame.Value;
+                    break;
+                case MonsterImage.BlackWingedBeast:
+                    CEnvir.LibraryList.TryGetValue(LibraryFile.Mon_58, out BodyLibrary);
+                    BodyShape = 3;
+                    AttackSound = SoundIndex.DragonLordAttack;
+                    StruckSound = SoundIndex.DragonLordStruck;
+                    DieSound = SoundIndex.DragonLordDie;
+
+                    foreach (KeyValuePair<MirAnimation, Frame> frame in FrameSet.BlackWingedBeast)
+                        Frames[frame.Key] = frame.Value;
+                    break;
+                // Mon_59
+                case MonsterImage.BlueMutantPlant:
+                    CEnvir.LibraryList.TryGetValue(LibraryFile.Mon_59, out BodyLibrary);
+                    BodyShape = 0;
+                    AttackSound = SoundIndex.CarnivorousPlantAttack;
+                    StruckSound = SoundIndex.CarnivorousPlantStruck;
+                    DieSound = SoundIndex.CarnivorousPlantDie;
+
+                    foreach (KeyValuePair<MirAnimation, Frame> frame in FrameSet.BlueMutantPlant)
+                        Frames[frame.Key] = frame.Value;
+                    break;
+                case MonsterImage.IcyReindeer:
+                    CEnvir.LibraryList.TryGetValue(LibraryFile.Mon_59, out BodyLibrary);
+                    BodyShape = 1;
+                    AttackSound = SoundIndex.DeerAttack;
+                    StruckSound = SoundIndex.DeerStruck;
+                    DieSound = SoundIndex.DeerDie;
+
+                    foreach (KeyValuePair<MirAnimation, Frame> frame in FrameSet.IcyReindeer)
+                        Frames[frame.Key] = frame.Value;
+                    break;
+                case MonsterImage.IcyGiant:
+                    CEnvir.LibraryList.TryGetValue(LibraryFile.Mon_59, out BodyLibrary);
+                    BodyShape = 2;
+                    AttackSound = SoundIndex.StoneGolemAttack;
+                    StruckSound = SoundIndex.StoneGolemStruck;
+                    DieSound = SoundIndex.StoneGolemDie;
+
+                    foreach (KeyValuePair<MirAnimation, Frame> frame in FrameSet.IcyGiant)
+                        Frames[frame.Key] = frame.Value;
+                    break;
+                case MonsterImage.BlackBear:
+                    CEnvir.LibraryList.TryGetValue(LibraryFile.Mon_59, out BodyLibrary);
+                    BodyShape = 3;
+                    AttackSound = SoundIndex.WhiteTigerAttack;
+                    StruckSound = SoundIndex.WhiteTigerStruck;
+                    DieSound = SoundIndex.WhiteTigerDie;
+
+                    foreach (KeyValuePair<MirAnimation, Frame> frame in FrameSet.BlackBear)
+                        Frames[frame.Key] = frame.Value;
+                    break;
+                case MonsterImage.IcyBlueDragon:
+                    CEnvir.LibraryList.TryGetValue(LibraryFile.Mon_59, out BodyLibrary);
+                    BodyShape = 4;
+                    AttackSound = SoundIndex.BlueDragonAttack;
+                    StruckSound = SoundIndex.BlueDragonStruck;
+                    DieSound = SoundIndex.BlueDragonDie;
+
+                    foreach (KeyValuePair<MirAnimation, Frame> frame in FrameSet.IcyBlueDragon)
+                        Frames[frame.Key] = frame.Value;
+                    break;
+                //Mon60
+                case MonsterImage.WingedYellowLizard:
+                    CEnvir.LibraryList.TryGetValue(LibraryFile.Mon_60, out BodyLibrary);
+                    BodyShape = 0;
+                    AttackSound = SoundIndex.GiantLizardAttack;
+                    StruckSound = SoundIndex.GiantLizardStruck;
+                    DieSound = SoundIndex.GiantLizardDie;
+                    break;
+                case MonsterImage.RamWarrior:
+                    CEnvir.LibraryList.TryGetValue(LibraryFile.Mon_60, out BodyLibrary);
+                    BodyShape = 1;
+                    AttackSound = SoundIndex.SheepAttack;
+                    StruckSound = SoundIndex.SheepStruck;
+                    DieSound = SoundIndex.SheepDie;
+
+                    break;
+
+                case MonsterImage.Uruloki:
+                    CEnvir.LibraryList.TryGetValue(LibraryFile.Mon_60, out BodyLibrary);
+                    BodyShape = 2;
+                    AttackSound = SoundIndex.BlueDragonAttack;
+                    StruckSound = SoundIndex.BlueDragonStruck;
+                    DieSound = SoundIndex.BlueDragonDie;
+                    break;
+
+                case MonsterImage.KameAruji:
+                    CEnvir.LibraryList.TryGetValue(LibraryFile.Mon_60, out BodyLibrary);
+                    BodyShape = 3;
+                    AttackSound = SoundIndex.BlackTortoiseAttack;
+                    StruckSound = SoundIndex.BlackTortoiseStruck;
+                    DieSound = SoundIndex.BlackTortoiseDie;
+                    break;
+
+                case MonsterImage.EvilGolem:
+                    CEnvir.LibraryList.TryGetValue(LibraryFile.Mon_60, out BodyLibrary);
+                    BodyShape = 4;
+                    AttackSound = SoundIndex.BlackTortoiseAttack;
+                    StruckSound = SoundIndex.BlackTortoiseStruck;
+                    DieSound = SoundIndex.BlackTortoiseDie;
+                    break;
+
+                case MonsterImage.FrostLancer:
+                    CEnvir.LibraryList.TryGetValue(LibraryFile.Mon_60, out BodyLibrary);
+                    BodyShape = 5;
+                    AttackSound = SoundIndex.FrostLordHwaAttack;
+                    StruckSound = SoundIndex.FrostLordHwaStruck;
+                    DieSound = SoundIndex.FrostMinotaurDie;
+                    break;
+
+                case MonsterImage.DemonValkyrie:
+                    CEnvir.LibraryList.TryGetValue(LibraryFile.Mon_60, out BodyLibrary);
+                    BodyShape = 6;
+                    AttackSound = SoundIndex.QueenOfDawnAttack;
+                    StruckSound = SoundIndex.QueenOfDawnStruck;
+                    DieSound = SoundIndex.QueenOfDawnDie;
+                    break;
+
+                case MonsterImage.HammerGiant:
+                    CEnvir.LibraryList.TryGetValue(LibraryFile.Mon_60, out BodyLibrary);
+                    BodyShape = 7;
+                    AttackSound = SoundIndex.StoneGolemAttack;
+                    StruckSound = SoundIndex.StoneGolemStruck;
+                    DieSound = SoundIndex.StoneGolemDie;
+                    break;
+
+                case MonsterImage.EvilNipper:
+                    CEnvir.LibraryList.TryGetValue(LibraryFile.Mon_60, out BodyLibrary);
+                    BodyShape = 8;
+                    AttackSound = SoundIndex.ShellNipperAttack;
+                    StruckSound = SoundIndex.ShellNipperStruck;
+                    DieSound = SoundIndex.ShellNipperDie;
+                    break;
+
+                case MonsterImage.Garuda:
+                    CEnvir.LibraryList.TryGetValue(LibraryFile.Mon_60, out BodyLibrary);
+                    BodyShape = 9;
+                    AttackSound = SoundIndex.DragonLordAttack;
+                    StruckSound = SoundIndex.DragonLordStruck;
+                    DieSound = SoundIndex.DragonLordDie;
+                    break;
+                //Mon61
+                case MonsterImage.HighOmaShaman:
+                    CEnvir.LibraryList.TryGetValue(LibraryFile.Mon_61, out BodyLibrary);
+                    BodyShape = 0;
+                    AttackSound = SoundIndex.NumaMageAttack;
+                    StruckSound = SoundIndex.NumaMageStruck;
+                    DieSound = SoundIndex.NumaMageDie;
+
+                    foreach (KeyValuePair<MirAnimation, Frame> frame in FrameSet.HighOmaShaman)
+                        Frames[frame.Key] = frame.Value;
+                    break;
+
+                case MonsterImage.HighOmaBat:
+                    CEnvir.LibraryList.TryGetValue(LibraryFile.Mon_61, out BodyLibrary);
+                    BodyShape = 1;
+                    AttackSound = SoundIndex.OmaAttack;
+                    StruckSound = SoundIndex.OmaStruck;
+                    DieSound = SoundIndex.OmaDie;
+                    break;
+
+                case MonsterImage.HighOmaFighter:
+                    CEnvir.LibraryList.TryGetValue(LibraryFile.Mon_61, out BodyLibrary);
+                    BodyShape = 2;
+                    AttackSound = SoundIndex.OmaAttack;
+                    StruckSound = SoundIndex.OmaStruck;
+                    DieSound = SoundIndex.OmaDie;
+                    break;
+
+                case MonsterImage.HighOmaWarrior:
+                    CEnvir.LibraryList.TryGetValue(LibraryFile.Mon_61, out BodyLibrary);
+                    BodyShape = 3;
+                    AttackSound = SoundIndex.OmaAttack;
+                    StruckSound = SoundIndex.OmaStruck;
+                    DieSound = SoundIndex.OmaDie;
+                    break;
+
+                case MonsterImage.HighOmaSword:
+                    CEnvir.LibraryList.TryGetValue(LibraryFile.Mon_61, out BodyLibrary);
+                    BodyShape = 4;
+                    AttackSound = SoundIndex.OmaAttack;
+                    StruckSound = SoundIndex.OmaStruck;
+                    DieSound = SoundIndex.OmaDie;
+                    break;
+
+                case MonsterImage.HighOmaAxe:
+                    CEnvir.LibraryList.TryGetValue(LibraryFile.Mon_61, out BodyLibrary);
+                    BodyShape = 5;
+                    AttackSound = SoundIndex.OmaAttack;
+                    StruckSound = SoundIndex.OmaStruck;
+                    DieSound = SoundIndex.OmaDie;
+                    break;
+
+                case MonsterImage.HighOmaKing:
+                    CEnvir.LibraryList.TryGetValue(LibraryFile.Mon_61, out BodyLibrary);
+                    BodyShape = 6;
+                    AttackSound = SoundIndex.OmaHeroAttack;
+                    StruckSound = SoundIndex.OmaHeroStruck;
+                    DieSound = SoundIndex.OmaHeroDie;
+                    break;
+
+                case MonsterImage.GreatEvilSpider:
+                    CEnvir.LibraryList.TryGetValue(LibraryFile.Mon_61, out BodyLibrary);
+                    BodyShape = 7;
+                    AttackSound = SoundIndex.SpittingSpiderAttack;
+                    StruckSound = SoundIndex.SpittingSpiderStruck;
+                    DieSound = SoundIndex.SpittingSpiderDie;
+
+                    foreach (KeyValuePair<MirAnimation, Frame> frame in FrameSet.GreatEvilSpider)
+                        Frames[frame.Key] = frame.Value;
+                    break;
+
+                case MonsterImage.DeathCommander:
+                    CEnvir.LibraryList.TryGetValue(LibraryFile.Mon_61, out BodyLibrary);
+                    BodyShape = 8;
+                    AttackSound = SoundIndex.DeathLordJichonAttack;
+                    StruckSound = SoundIndex.DeathLordJichonStruck;
+                    DieSound = SoundIndex.DeathLordJichonDie;
+                    break;
+
+                case MonsterImage.EvilAbomination:
+                    CEnvir.LibraryList.TryGetValue(LibraryFile.Mon_61, out BodyLibrary);
+                    BodyShape = 9;
+                    AttackSound = SoundIndex.OmaHeroAttack;
+                    StruckSound = SoundIndex.OmaHeroStruck;
+                    DieSound = SoundIndex.OmaHeroDie;
+                    break;
+                //Mon62
+                case MonsterImage.SerpentGoddess:
+                    CEnvir.LibraryList.TryGetValue(LibraryFile.Mon_62, out BodyLibrary);
+                    BodyShape = 0;
+                    AttackSound = SoundIndex.ClawSerpentAttack;
+                    StruckSound = SoundIndex.ClawSerpentStruck;
+                    DieSound = SoundIndex.ClawSerpentDie;
+                    break;
+
+                case MonsterImage.RedIronGuardian:
+                    CEnvir.LibraryList.TryGetValue(LibraryFile.Mon_62, out BodyLibrary);
+                    BodyShape = 1;
+                    AttackSound = SoundIndex.ChaosKnightAttack;
+                    StruckSound = SoundIndex.ChaosKnightStruck;
+                    DieSound = SoundIndex.ChaosKnightDie;
+
+                    foreach (KeyValuePair<MirAnimation, Frame> frame in FrameSet.RedIronGuardian)
+                        Frames[frame.Key] = frame.Value;
+                    break;
+
+                case MonsterImage.BlueIronGuardian:
+                    CEnvir.LibraryList.TryGetValue(LibraryFile.Mon_62, out BodyLibrary);
+                    BodyShape = 2;
+                    AttackSound = SoundIndex.ChaosKnightAttack;
+                    StruckSound = SoundIndex.ChaosKnightStruck;
+                    DieSound = SoundIndex.ChaosKnightDie;
+                    break;
+
+                case MonsterImage.GreatMutantFrog:
+                    CEnvir.LibraryList.TryGetValue(LibraryFile.Mon_62, out BodyLibrary);
+                    BodyShape = 3;
+                    AttackSound = SoundIndex.MutantCaptainAttack;
+                    StruckSound = SoundIndex.MutantCaptainStruck;
+                    DieSound = SoundIndex.MutantCaptainDie;
+                    break;
+
+                case MonsterImage.BigMutantFish:
+                    CEnvir.LibraryList.TryGetValue(LibraryFile.Mon_62, out BodyLibrary);
+                    BodyShape = 4;
+                    AttackSound = SoundIndex.MutantCaptainAttack;
+                    StruckSound = SoundIndex.MutantCaptainStruck;
+                    DieSound = SoundIndex.MutantCaptainDie;
+
+                    foreach (KeyValuePair<MirAnimation, Frame> frame in FrameSet.BigMutantFish)
+                        Frames[frame.Key] = frame.Value;
+                    break;
+
+                case MonsterImage.GoldWarrior:
+                    CEnvir.LibraryList.TryGetValue(LibraryFile.Mon_62, out BodyLibrary);
+                    BodyShape = 5;
+                    AttackSound = SoundIndex.PhantomSoldierAttack;
+                    StruckSound = SoundIndex.PhantomSoldierStruck;
+                    DieSound = SoundIndex.PhantomSoldierDie;
+                    break;
+
+                case MonsterImage.ShadowFireDemon:
+                    CEnvir.LibraryList.TryGetValue(LibraryFile.Mon_62, out BodyLibrary);
+                    BodyShape = 6;
+                    AttackSound = SoundIndex.DeathLordJichonAttack;
+                    StruckSound = SoundIndex.DeathLordJichonStruck;
+                    DieSound = SoundIndex.DeathLordJichonDie;
+                    break;
+
+                case MonsterImage.WingedGoldWarrior:
+                    CEnvir.LibraryList.TryGetValue(LibraryFile.Mon_62, out BodyLibrary);
+                    BodyShape = 7;
+                    AttackSound = SoundIndex.PhantomSoldierAttack;
+                    StruckSound = SoundIndex.PhantomSoldierStruck;
+                    DieSound = SoundIndex.PhantomSoldierDie;
+                    break;
+
+                case MonsterImage.GreatCat:
+                    CEnvir.LibraryList.TryGetValue(LibraryFile.Mon_62, out BodyLibrary);
+                    BodyShape = 8;
+                    AttackSound = SoundIndex.ClawCatAttack;
+                    StruckSound = SoundIndex.ClawCatStruck;
+                    DieSound = SoundIndex.ClawCatDie;
+                    break;
+
+                case MonsterImage.EvilVampir:
+                    CEnvir.LibraryList.TryGetValue(LibraryFile.Mon_62, out BodyLibrary);
+                    BodyShape = 9;
+                    AttackSound = SoundIndex.CaveBatAttack;
+                    StruckSound = SoundIndex.CaveBatStruck;
+                    DieSound = SoundIndex.CaveBatDie;
+                    break;
+                //Mon63
+                case MonsterImage.NineTailedFox:
+                    CEnvir.LibraryList.TryGetValue(LibraryFile.Mon_63, out BodyLibrary);
+                    BodyShape = 0;
+                    AttackSound = SoundIndex.WerewolfAttack;
+                    StruckSound = SoundIndex.WerewolfStruck;
+                    DieSound = SoundIndex.WerewolfDie;
+                    break;
+
+                case MonsterImage.EvilMirDragon:
+                    CEnvir.LibraryList.TryGetValue(LibraryFile.Mon_63, out BodyLibrary);
+                    BodyShape = 1;
+                    AttackSound = SoundIndex.WerewolfAttack;
+                    StruckSound = SoundIndex.WerewolfStruck;
+                    DieSound = SoundIndex.WerewolfDie;
+
+                    foreach (KeyValuePair<MirAnimation, Frame> frame in FrameSet.EvilMirDragon)
+                        Frames[frame.Key] = frame.Value;
+                    break;
+
+                case MonsterImage.Ryu:
+                    CEnvir.LibraryList.TryGetValue(LibraryFile.Mon_63, out BodyLibrary);
+                    BodyShape = 2;
+                    AttackSound = SoundIndex.DragonLordAttack;
+                    StruckSound = SoundIndex.DragonLordStruck;
+                    DieSound = SoundIndex.DragonLordDie;
+                    break;
+
+                case MonsterImage.GreatUnicorn:
+                    CEnvir.LibraryList.TryGetValue(LibraryFile.Mon_63, out BodyLibrary);
+                    BodyShape = 3;
+                    break;
+
+                case MonsterImage.EvilGargoyle:
+                    CEnvir.LibraryList.TryGetValue(LibraryFile.Mon_63, out BodyLibrary);
+                    BodyShape = 4;
+                    break;
+
+                case MonsterImage.SixWingedDemon:
+                    CEnvir.LibraryList.TryGetValue(LibraryFile.Mon_63, out BodyLibrary);
+                    BodyShape = 5;
+                    AttackSound = SoundIndex.DragonLordAttack;
+                    StruckSound = SoundIndex.DragonLordStruck;
+                    DieSound = SoundIndex.DragonLordDie;
+                    break;
+
+                case MonsterImage.DemonBloodLord:
+                    CEnvir.LibraryList.TryGetValue(LibraryFile.Mon_63, out BodyLibrary);
+                    BodyShape = 6;
+                    AttackSound = SoundIndex.LordNiJaeAttack;
+                    StruckSound = SoundIndex.LordNiJaeStruck;
+                    DieSound = SoundIndex.LordNiJaeDie;
+                    break;
+
+                case MonsterImage.DarkEnt:
+                    CEnvir.LibraryList.TryGetValue(LibraryFile.Mon_63, out BodyLibrary);
+                    BodyShape = 7;
+                    AttackSound = SoundIndex.DragonLordAttack;
+                    StruckSound = SoundIndex.DragonLordStruck;
+                    DieSound = SoundIndex.DragonLordDie;
+                    break;
+
+                case MonsterImage.OrochiMounted:
+                    CEnvir.LibraryList.TryGetValue(LibraryFile.Mon_63, out BodyLibrary);
+                    BodyShape = 8;
+                    AttackSound = SoundIndex.DragonLordAttack;
+                    StruckSound = SoundIndex.DragonLordStruck;
+                    DieSound = SoundIndex.DragonLordDie;
+                    break;
+
+                case MonsterImage.Nazgul:
+                    CEnvir.LibraryList.TryGetValue(LibraryFile.Mon_63, out BodyLibrary);
+                    BodyShape = 9;
+                    AttackSound = SoundIndex.DragonLordAttack;
+                    StruckSound = SoundIndex.DragonLordStruck;
+                    DieSound = SoundIndex.DragonLordDie;
+                    break;
+                //Mon64
+                case MonsterImage.FireAxeDevil:
+                    CEnvir.LibraryList.TryGetValue(LibraryFile.Mon_63, out BodyLibrary);
+                    BodyShape = 0;
+                    AttackSound = SoundIndex.DragonLordAttack;
+                    StruckSound = SoundIndex.DragonLordStruck;
+                    DieSound = SoundIndex.DragonLordDie;
+                    break;
+
+                case MonsterImage.ScorpionAxeDevil:
+                    CEnvir.LibraryList.TryGetValue(LibraryFile.Mon_63, out BodyLibrary);
+                    BodyShape = 1;
+                    AttackSound = SoundIndex.DragonLordAttack;
+                    StruckSound = SoundIndex.DragonLordStruck;
+                    DieSound = SoundIndex.DragonLordDie;
+                    break;
+
+                case MonsterImage.DemonPriestess:
+                    CEnvir.LibraryList.TryGetValue(LibraryFile.Mon_63, out BodyLibrary);
+                    BodyShape = 2;
+                    AttackSound = SoundIndex.DragonLordAttack;
+                    StruckSound = SoundIndex.DragonLordStruck;
+                    DieSound = SoundIndex.DragonLordDie;
+                    break;
+
+                case MonsterImage.KameSemi:
+                    CEnvir.LibraryList.TryGetValue(LibraryFile.Mon_63, out BodyLibrary);
+                    BodyShape = 3;
+                    AttackSound = SoundIndex.BlackTortoiseAttack;
+                    StruckSound = SoundIndex.BlackTortoiseStruck;
+                    DieSound = SoundIndex.BlackTortoiseDie;
+                    break;
+
+                case MonsterImage.JotunGiant:
+                    CEnvir.LibraryList.TryGetValue(LibraryFile.Mon_63, out BodyLibrary);
+                    BodyShape = 4;
+                    AttackSound = SoundIndex.StoneGolemAttack;
+                    StruckSound = SoundIndex.StoneGolemStruck;
+                    DieSound = SoundIndex.StoneGolemDie;
+                    break;
+
+                case MonsterImage.MinoTaurus:
+                    CEnvir.LibraryList.TryGetValue(LibraryFile.Mon_63, out BodyLibrary);
+                    BodyShape = 5;
+                    AttackSound = SoundIndex.EmperorSaWooAttack;
+                    StruckSound = SoundIndex.EmperorSaWooStruck;
+                    DieSound = SoundIndex.EmperorSaWooDie;
+                    break;
+
+                case MonsterImage.SandStoneDragon:
+                    CEnvir.LibraryList.TryGetValue(LibraryFile.Mon_63, out BodyLibrary);
+                    BodyShape = 6;
+                    AttackSound = SoundIndex.DragonLordAttack;
+                    StruckSound = SoundIndex.DragonLordStruck;
+                    DieSound = SoundIndex.DragonLordDie;
+
+                    foreach (KeyValuePair<MirAnimation, Frame> frame in FrameSet.GroundStuckBosses)
+                        Frames[frame.Key] = frame.Value;
+                    break;
+
+                case MonsterImage.AbyssDemon:
+                    CEnvir.LibraryList.TryGetValue(LibraryFile.Mon_63, out BodyLibrary);
+                    BodyShape = 7;
+                    AttackSound = SoundIndex.DeathLordJichonAttack;
+                    StruckSound = SoundIndex.DeathLordJichonStruck;
+                    DieSound = SoundIndex.DeathLordJichonDie;
+
+                    foreach (KeyValuePair<MirAnimation, Frame> frame in FrameSet.GroundStuckBosses2)
+                        Frames[frame.Key] = frame.Value;
+                    break;
+
+                case MonsterImage.Kraken:
+                    CEnvir.LibraryList.TryGetValue(LibraryFile.Mon_63, out BodyLibrary);
+                    BodyShape = 8;
+                    AttackSound = SoundIndex.RedMoonTheFallenAttack;
+                    StruckSound = SoundIndex.RedMoonTheFallenStruck;
+                    DieSound = SoundIndex.RedMoonTheFallenDie;
+
+                    foreach (KeyValuePair<MirAnimation, Frame> frame in FrameSet.GroundStuckBosses3)
+                        Frames[frame.Key] = frame.Value;
+                    break;
+
+                case MonsterImage.StoneEye:
+                    CEnvir.LibraryList.TryGetValue(LibraryFile.Mon_63, out BodyLibrary);
+                    BodyShape = 9;
+                    AttackSound = SoundIndex.RedMoonTheFallenAttack;
+                    StruckSound = SoundIndex.RedMoonTheFallenStruck;
+                    DieSound = SoundIndex.RedMoonTheFallenDie;
+
+                    foreach (KeyValuePair<MirAnimation, Frame> frame in FrameSet.GroundStuckBosses3)
+                        Frames[frame.Key] = frame.Value;
+                    break;
+
                 default:
                     CEnvir.LibraryList.TryGetValue(LibraryFile.Mon_1, out BodyLibrary);
                     BodyShape = 0;
@@ -2279,7 +3007,7 @@ namespace Client.Models
                 case MonsterImage.ChestnutTree:
                     y -= MapControl.CellHeight;
                     break;
-                case MonsterImage.NewMob10:
+                case MonsterImage.DeadTree:
                     y -= MapControl.CellHeight * 4;
                     break;
             }
@@ -3441,7 +4169,7 @@ namespace Client.Models
                             break;
                     }
                     break;
-                case MonsterImage.NewMob3:
+                case MonsterImage.BlueCrystalBat:
                     switch (action.Action)
                     {
                         case MirAction.Attack:
@@ -3455,7 +4183,7 @@ namespace Client.Models
                             break;
                     }
                     break;
-                case MonsterImage.NewMob10:
+                case MonsterImage.DeadTree:
                     switch (action.Action)
                     {
                         case MirAction.Show:
@@ -3482,7 +4210,7 @@ namespace Client.Models
                             break;
                     }
                     break;
-                case MonsterImage.NewMob8:
+                case MonsterImage.YellowRockyTurtle:
                     switch (action.Action)
                     {
                         case MirAction.Show:
@@ -3501,8 +4229,8 @@ namespace Client.Models
                             break;
                     }
                     break;
-                case MonsterImage.NewMob4:
-                case MonsterImage.NewMob5:
+                case MonsterImage.BlueCrystalGolem:
+                case MonsterImage.GoldCrystalGolem:
                     switch (action.Action)
                     {
                         case MirAction.Attack:
