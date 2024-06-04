@@ -367,7 +367,7 @@ namespace Server.Models
                     if (Info.Delay >= 1000000)
                     {
                         foreach (SConnection con in SEnvir.Connections)
-                            con.ReceiveChat($"{mob.MonsterInfo.MonsterName} has appeared.", MessageType.System);
+                            con.ReceiveChat($"{mob.MonsterInfo.MonsterName} a aparecido.", MessageType.System);
                     }
                     else
                     {
