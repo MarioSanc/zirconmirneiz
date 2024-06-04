@@ -357,7 +357,7 @@ namespace Client.Models
                 DrawColour = Color.IndianRed;
 
             if ((Poison & PoisonType.Green) == PoisonType.Green)
-                DrawColour = Color.SeaGreen;
+                DrawColour = Color.YellowGreen;
 
             if ((Poison & PoisonType.Slow) == PoisonType.Slow)
                 DrawColour = Color.CornflowerBlue;
