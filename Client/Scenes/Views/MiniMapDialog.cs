@@ -330,7 +330,7 @@ namespace Client.Scenes.Views
                             BackColour = colour,
                             DrawTexture = true,
                             Size = new Size(3, 3)
-                        };
+                    };
                     }
                     else
                         control.Controls[0].BackColour = colour;
