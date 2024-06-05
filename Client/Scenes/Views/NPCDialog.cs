@@ -1063,8 +1063,8 @@ namespace Client.Scenes.Views
         public event EventHandler<EventArgs> GoodChanged;
         public void OnGoodChanged(NPCGood oValue, NPCGood nValue)
         {
-            ItemCell.Item = new ClientUserItem(Good.Item, 1) { Flags = UserItemFlags.Locked  };
-            
+            ItemCell.Item = new ClientUserItem(Good.Item, 1); // añade { Flags = UserItemFlags.Locked  } si quieres que se vendan los items bloqueados.
+
             switch (Good.Item.ItemType)
             {
                 case ItemType.Weapon:

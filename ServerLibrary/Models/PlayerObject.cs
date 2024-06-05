@@ -1047,8 +1047,8 @@ namespace Server.Models
             Enqueue(new S.MailList { Mail = Character.Account.Mail.Select(x => x.ToClientInfo()).ToList() });
 
 
-            if (Character.Account.Characters.Max(x => x.Level) > Level && Character.Rebirth == 0)
-                BuffAdd(BuffType.Veteran, TimeSpan.MaxValue, new Stats { [Stat.ExperienceRate] = 50 }, false, false, TimeSpan.Zero);
+            // if (Character.Account.Characters.Max(x => x.Level) > Level && Character.Rebirth == 0)
+               // BuffAdd(BuffType.Veteran, TimeSpan.MaxValue, new Stats { [Stat.ExperienceRate] = 50 }, false, false, TimeSpan.Zero);
 
             Map map = SEnvir.GetMap(CurrentMap.Info.ReconnectMap);
 
@@ -1068,7 +1068,7 @@ namespace Server.Models
             ApplyServerBuff();
             ApplyCastleBuff();
             ApplyGuildBuff();
-            ApplyObserverBuff();
+           // ApplyObserverBuff();
             ApplyFameBuff();
 
             PauseBuffs();
@@ -1223,7 +1223,7 @@ namespace Server.Models
                 Connection.Observers[i].EndObservation();
             }
 
-            ApplyObserverBuff();
+           // ApplyObserverBuff();
         }
 
         private void NewCharacter()
@@ -9404,7 +9404,7 @@ namespace Server.Models
                     }
                 }
 
-                UserItemFlags flags = UserItemFlags.Locked;
+                UserItemFlags flags = UserItemFlags.None; // Poner en .Locked si quieres que al comprar un item aparezca bloqueado por defecto.
 
                 switch (good.Item.ItemType)
                 {
