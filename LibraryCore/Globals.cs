@@ -281,7 +281,7 @@ namespace Library
                          StorageSize = 100,
                          PartsStorageOffset = 2000;
 
-        public const int AttackDelay = 1500,
+        public const int AttackDelay = 1200,
                          ASpeedRate = 47,
                          ProjectileSpeed = 48;
 
@@ -290,7 +290,7 @@ namespace Library
                                MoveTime = TimeSpan.FromMilliseconds(600),
                                AttackTime = TimeSpan.FromMilliseconds(600),
                                CastTime = TimeSpan.FromMilliseconds(600),
-                               MagicDelay = TimeSpan.FromMilliseconds(2000);
+                               MagicDelay = TimeSpan.FromMilliseconds(1500);
 
         public static bool RealNameRequired = false,
                            BirthDateRequired = false;
