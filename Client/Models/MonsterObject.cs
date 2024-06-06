@@ -3107,7 +3107,7 @@ namespace Client.Models
         }
         public override void DrawHealth()
         {
-            if (!Config.ShowMonsterHealth || ((CEnvir.Now > DrawHealthTime || !Visible) && PetOwner != User.Name)) return;
+            if (!Config.ShowMonsterHealth && PetOwner != User.Name) return;  // añade esto para que desaparezca la barra de vida: || ((CEnvir.Now > DrawHealthTime || !Visible)
 
             if (MonsterInfo.AI < 0) return;
 
@@ -3128,8 +3128,8 @@ namespace Client.Models
 
             Color color = !string.IsNullOrEmpty(PetOwner) ? Color.Yellow : Color.FromArgb(0, 200, 74);
 
-            library.Draw(80, DrawX, DrawY - 55, Color.White, false, 1F, ImageType.Image);
-            library.Draw(79, DrawX + 1, DrawY - 55 + 1, color, new Rectangle(0, 0, (int)(size.Width * percent), size.Height), 1F, ImageType.Image);
+            library.Draw(80, DrawX, DrawY - 35, Color.White, false, 1F, ImageType.Image);
+            library.Draw(79, DrawX + 1, DrawY - 35 + 1, color, new Rectangle(0, 0, (int)(size.Width * percent), size.Height), 1F, ImageType.Image);
         }
 
         public override void DrawBlend()
