@@ -104,7 +104,7 @@ namespace Server.Models
 
         public PoisonType PoisonType;
         public int PoisonRate = 10;
-        public int PoisonTicks = 5;
+        public int PoisonTicks = 2;
         public int PoisonFrequency = 2;
 
         public bool IgnoreShield;
@@ -632,6 +632,20 @@ namespace Server.Models
                         PoisonFrequency = 5,
                         PoisonRate = 15,
                     };
+
+                case 135:
+                    return new EvilCobra
+                    {
+                        MonsterInfo = monsterInfo,
+                        PoisonType = PoisonType.Green,
+                        PoisonTicks = 5,
+                        PoisonFrequency = 3,
+                        PoisonRate = 5,
+                    };
+
+
+
+
 
                 case 1001:
                     return new CastleFlag { MonsterInfo = monsterInfo };

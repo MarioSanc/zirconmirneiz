@@ -210,11 +210,13 @@ namespace Server.Models
             for (int i = PoisonList.Count - 1; i >= 0; i--)
             {
                 Poison poison = PoisonList[i];
-                if (poison.Owner?.Node == null || poison.Owner.Dead || poison.Owner.CurrentMap != CurrentMap || !Functions.InRange(poison.Owner.CurrentLocation, CurrentLocation, Config.MaxViewRange))
+
+                //si se activa, el pois desaparece cuando te alejas del enemigo
+               /* if (poison.Owner?.Node == null || poison.Owner.Dead || poison.Owner.CurrentMap != CurrentMap || !Functions.InRange(poison.Owner.CurrentLocation, CurrentLocation, Config.MaxViewRange))
                 {
                     PoisonList.Remove(poison);
                     continue;
-                }
+                }*/
 
                 current |= poison.Type;
 
