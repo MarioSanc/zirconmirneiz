@@ -2330,7 +2330,7 @@ namespace Server.Models
             Stats[Stat.MinSC] = stat.MinSC;
             Stats[Stat.MaxSC] = stat.MaxSC;
 
-            Stats[Stat.PickUpRadius] = 1;
+            Stats[Stat.PickUpRadius] = 0; // Rango con el que se recogen los items del suelo
             Stats[Stat.SkillRate] = 1;
             Stats[Stat.CriticalChance] = 1;
 
