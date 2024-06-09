@@ -1039,7 +1039,8 @@ namespace Client.Scenes
 
             MonsterObject mob = MouseObject as MonsterObject;
 
-            if (mob != null && mob.CompanionObject == null)
+            // Target only monster alive
+            if (mob != null && mob.CompanionObject == null && !mob.Dead)
                 MonsterBox.Monster = mob;
             else
             {
@@ -1047,6 +1048,10 @@ namespace Client.Scenes
                 if (mob != null && mob.CompanionObject == null && !FocusObject.Dead)
                     MonsterBox.Monster = mob;
             }
+
+            // If current target in box is dead, clear it
+            if (MonsterBox.Monster != null && MonsterBox.Monster.Dead)
+                MonsterBox.Monster = null;
         }
 
         public override void OnKeyPress(KeyPressEventArgs e)
