@@ -1066,6 +1066,8 @@ namespace Server.Models
                 return;
             }
 
+            if (SEnvir.Now < SearchTime || CurrentMap.Players.Count == 0) return;
+
             if (Target != null)
             {
                 if (!Visible)
@@ -1074,7 +1076,7 @@ namespace Server.Models
                 }
                 else if (!CanMove && !CanAttack) return;
             }
-            else if (SEnvir.Now < SearchTime || CurrentMap.Players.Count == 0) return;
+            //else if (SEnvir.Now < SearchTime || CurrentMap.Players.Count == 0) return;
 
             SearchTime = SEnvir.Now + SearchDelay;
 
@@ -1118,8 +1120,18 @@ namespace Server.Models
 
             if (closest.Count == 0) return;
 
-            Target = closest[SEnvir.Random.Next(closest.Count)];
+            //Target = closest[SEnvir.Random.Next(closest.Count)];
+            ChangeTarget(closest[SEnvir.Random.Next(closest.Count)]);
         }
+
+        public void ChangeTarget(MapObject NewTarget)
+        {
+            if (Target == null)
+                Target = NewTarget;
+            else if (SEnvir.Random.Next(3) == 1)
+                Target = NewTarget;
+        }
+
         public void ProperSearch()
         {
             if (Target != null)
@@ -2444,7 +2456,8 @@ namespace Server.Models
             if (Dead) return power;
 
             if (CanAttackTarget(attacker) && PetOwner == null || Target == null)
-                Target = attacker;
+                ChangeTarget(attacker);
+            //Target = attacker;
 
 
             return power;
@@ -2453,8 +2466,9 @@ namespace Server.Models
         {
             bool res = base.ApplyPoison(p);
 
-            if (res && CanAttackTarget(p.Owner) && Target == null)
-                Target = p.Owner;
+            if (res && CanAttackTarget(p.Owner))// && Target == null)
+                ChangeTarget(p.Owner);
+            //Target = p.Owner;
 
             if (p.Owner.Race == ObjectType.Player)
                 PlayerTagged = true;
