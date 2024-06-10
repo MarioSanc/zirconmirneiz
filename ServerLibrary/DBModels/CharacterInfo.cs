@@ -749,6 +749,22 @@ namespace Server.DBModels
         }
         private string _FiltersItemType;
 
+        [Association("Pet")]
+        public MonsterInfo Pet
+        {
+            get { return _Pet; }
+            set
+            {
+                if (_Pet == value) return;
+
+                var oldValue = _Pet;
+                _Pet = value;
+
+                OnChanged(oldValue, value, "Pet");
+            }
+        }
+        private MonsterInfo _Pet;
+
         public Dictionary<RequiredClass, int> CurrentRank = new ();
         public Dictionary<RequiredClass, int> RankChange = new ();
 
