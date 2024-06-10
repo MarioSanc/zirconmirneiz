@@ -11,6 +11,7 @@ namespace Server.Views
 
             CharacterGridControl.DataSource = SEnvir.CharacterInfoList?.Binding;
             AccountLookUpEdit.DataSource = SEnvir.AccountInfoList?.Binding;
+            PetLookUpEdit.DataSource = SEnvir.MonsterInfoList?.Binding;
 
             CharacterGridView.OptionsSelection.MultiSelect = true;
             CharacterGridView.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.CellSelect;

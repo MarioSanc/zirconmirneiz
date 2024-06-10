@@ -35,7 +35,7 @@ namespace Server.Models.Magics
 
             var info = SEnvir.MonsterInfoList.Binding.First(x => x.Flag == MonsterFlag.JinSkeleton);
 
-            ActionList.Add(new DelayedAction(delay, ActionType.DelayMagic, Type, CurrentMap, Functions.Move(CurrentLocation, direction, -1), info));
+            ActionList.Add(new DelayedAction(delay, ActionType.DelayMagic, Type, CurrentMap, Functions.Move(CurrentLocation, direction, 1), info));
 
             return response;
         }

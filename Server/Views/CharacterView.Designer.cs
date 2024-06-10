@@ -31,29 +31,33 @@ namespace Server.Views
         private void InitializeComponent()
         {
             DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
-            this.AccountLookUpEdit = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
-            this.CharacterGridControl = new DevExpress.XtraGrid.GridControl();
-            this.CharacterGridView = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.repositoryItemTextEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
+            DevExpress.XtraGrid.Columns.GridColumn gridColumn10;
+            AccountLookUpEdit = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
+            PetLookUpEdit = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
+            CharacterGridControl = new DevExpress.XtraGrid.GridControl();
+            CharacterGridView = new DevExpress.XtraGrid.Views.Grid.GridView();
+            gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
+            gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
+            gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
+            gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
+            repositoryItemTextEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.Caption = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
+            gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
             gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.AccountLookUpEdit)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CharacterGridControl)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CharacterGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
-            this.SuspendLayout();
+            gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
+            ((System.ComponentModel.ISupportInitialize)AccountLookUpEdit).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)PetLookUpEdit).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)CharacterGridControl).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)CharacterGridView).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)repositoryItemTextEdit1).BeginInit();
+            SuspendLayout();
             // 
             // gridColumn6
             // 
-            gridColumn6.ColumnEdit = this.AccountLookUpEdit;
+            gridColumn6.ColumnEdit = AccountLookUpEdit;
             gridColumn6.FieldName = "Account";
             gridColumn6.Name = "gridColumn6";
             gridColumn6.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.True;
@@ -63,104 +67,97 @@ namespace Server.Views
             // 
             // AccountLookUpEdit
             // 
-            this.AccountLookUpEdit.AutoHeight = false;
-            this.AccountLookUpEdit.BestFitMode = DevExpress.XtraEditors.Controls.BestFitMode.BestFitResizePopup;
-            this.AccountLookUpEdit.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.AccountLookUpEdit.CloseUpKey = new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.F5);
-            this.AccountLookUpEdit.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("EMailAddress", "E-Mail")});
-            this.AccountLookUpEdit.DisplayMember = "EMailAddress";
-            this.AccountLookUpEdit.Name = "AccountLookUpEdit";
-            this.AccountLookUpEdit.NullText = "[Account is null]";
+            AccountLookUpEdit.AutoHeight = false;
+            AccountLookUpEdit.BestFitMode = DevExpress.XtraEditors.Controls.BestFitMode.BestFitResizePopup;
+            AccountLookUpEdit.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
+            AccountLookUpEdit.CloseUpKey = new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.F5);
+            AccountLookUpEdit.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] { new DevExpress.XtraEditors.Controls.LookUpColumnInfo("EMailAddress", "E-Mail") });
+            AccountLookUpEdit.DisplayMember = "EMailAddress";
+            AccountLookUpEdit.Name = "AccountLookUpEdit";
+            AccountLookUpEdit.NullText = "[Account is null]";
             // 
             // CharacterGridControl
             // 
-            this.CharacterGridControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.CharacterGridControl.Location = new System.Drawing.Point(0, 0);
-            this.CharacterGridControl.MainView = this.CharacterGridView;
-            this.CharacterGridControl.Name = "CharacterGridControl";
-            this.CharacterGridControl.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
-            this.repositoryItemTextEdit1,
-            this.AccountLookUpEdit});
-            this.CharacterGridControl.Size = new System.Drawing.Size(640, 517);
-            this.CharacterGridControl.TabIndex = 0;
-            this.CharacterGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.CharacterGridView});
-            //this.CharacterGridControl.Click += new System.EventHandler(this.CharacterGridControl.Click);
+            CharacterGridControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            CharacterGridControl.Location = new System.Drawing.Point(0, 0);
+            CharacterGridControl.MainView = CharacterGridView;
+            CharacterGridControl.Name = "CharacterGridControl";
+            CharacterGridControl.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] { repositoryItemTextEdit1, AccountLookUpEdit, PetLookUpEdit });
+            CharacterGridControl.Size = new System.Drawing.Size(640, 517);
+            CharacterGridControl.TabIndex = 0;
+            CharacterGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] { CharacterGridView });
             // 
             // CharacterGridView
             // 
-            this.CharacterGridView.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.gridColumn1,
-            gridColumn6,
-            this.gridColumn2,
-            this.gridColumn3,
-            this.gridColumn4,
-            this.gridColumn5,
-            this.gridColumn7,
-            this.gridColumn8,
-            this.Caption});
-            this.CharacterGridView.GridControl = this.CharacterGridControl;
-            this.CharacterGridView.Name = "CharacterGridView";
-            this.CharacterGridView.OptionsView.ShowGroupPanel = false;
+            CharacterGridView.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] { gridColumn1, gridColumn6, gridColumn2, gridColumn3, gridColumn4, gridColumn5, gridColumn7, gridColumn8, Caption, gridColumn10 });
+            CharacterGridView.GridControl = CharacterGridControl;
+            CharacterGridView.Name = "CharacterGridView";
+            CharacterGridView.OptionsView.ShowGroupPanel = false;
             // 
             // gridColumn1
             // 
-            this.gridColumn1.FieldName = "CharacterName";
-            this.gridColumn1.Name = "gridColumn1";
-            this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 0;
+            gridColumn1.FieldName = "CharacterName";
+            gridColumn1.Name = "gridColumn1";
+            gridColumn1.Visible = true;
+            gridColumn1.VisibleIndex = 0;
             // 
             // gridColumn2
             // 
-            this.gridColumn2.FieldName = "Class";
-            this.gridColumn2.Name = "gridColumn2";
-            this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 2;
+            gridColumn2.FieldName = "Class";
+            gridColumn2.Name = "gridColumn2";
+            gridColumn2.Visible = true;
+            gridColumn2.VisibleIndex = 2;
             // 
             // gridColumn3
             // 
-            this.gridColumn3.FieldName = "Gender";
-            this.gridColumn3.Name = "gridColumn3";
-            this.gridColumn3.Visible = true;
-            this.gridColumn3.VisibleIndex = 3;
+            gridColumn3.FieldName = "Gender";
+            gridColumn3.Name = "gridColumn3";
+            gridColumn3.Visible = true;
+            gridColumn3.VisibleIndex = 3;
             // 
             // gridColumn4
             // 
-            this.gridColumn4.FieldName = "Level";
-            this.gridColumn4.Name = "gridColumn4";
-            this.gridColumn4.Visible = true;
-            this.gridColumn4.VisibleIndex = 4;
+            gridColumn4.FieldName = "Level";
+            gridColumn4.Name = "gridColumn4";
+            gridColumn4.Visible = true;
+            gridColumn4.VisibleIndex = 4;
             // 
             // gridColumn5
             // 
-            this.gridColumn5.FieldName = "HairType";
-            this.gridColumn5.Name = "gridColumn5";
-            this.gridColumn5.Visible = true;
-            this.gridColumn5.VisibleIndex = 5;
+            gridColumn5.FieldName = "HairType";
+            gridColumn5.Name = "gridColumn5";
+            gridColumn5.Visible = true;
+            gridColumn5.VisibleIndex = 5;
             // 
             // gridColumn7
             // 
-            this.gridColumn7.FieldName = "Deleted";
-            this.gridColumn7.Name = "gridColumn7";
-            this.gridColumn7.Visible = true;
-            this.gridColumn7.VisibleIndex = 6;
+            gridColumn7.FieldName = "Deleted";
+            gridColumn7.Name = "gridColumn7";
+            gridColumn7.Visible = true;
+            gridColumn7.VisibleIndex = 6;
             // 
             // gridColumn8
             // 
-            this.gridColumn8.ColumnEdit = this.repositoryItemTextEdit1;
-            this.gridColumn8.FieldName = "Experience";
-            this.gridColumn8.Name = "gridColumn8";
-            this.gridColumn8.Visible = true;
-            this.gridColumn8.VisibleIndex = 7;
+            gridColumn8.ColumnEdit = repositoryItemTextEdit1;
+            gridColumn8.FieldName = "Experience";
+            gridColumn8.Name = "gridColumn8";
+            gridColumn8.Visible = true;
+            gridColumn8.VisibleIndex = 7;
             // 
             // repositoryItemTextEdit1
             // 
-            this.repositoryItemTextEdit1.AutoHeight = false;
-            this.repositoryItemTextEdit1.Mask.EditMask = "#,##0.#";
-            this.repositoryItemTextEdit1.Mask.UseMaskAsDisplayFormat = true;
-            this.repositoryItemTextEdit1.Name = "repositoryItemTextEdit1";
+            repositoryItemTextEdit1.AutoHeight = false;
+            repositoryItemTextEdit1.Mask.EditMask = "#,##0.#";
+            repositoryItemTextEdit1.Mask.UseMaskAsDisplayFormat = true;
+            repositoryItemTextEdit1.Name = "repositoryItemTextEdit1";
+            // 
+            // gridColumn9
+            // 
+            gridColumn9.ColumnEdit = repositoryItemTextEdit1;
+            gridColumn9.FieldName = "Experience";
+            gridColumn9.Name = "gridColumn9";
+            gridColumn9.Visible = true;
+            gridColumn9.VisibleIndex = 7;
             // 
             // Caption
             // 
@@ -169,28 +166,41 @@ namespace Server.Views
             this.Caption.Visible = true;
             this.Caption.VisibleIndex = 8;
             // 
-            // gridColumn9
+            // gridColumn10
             // 
-            this.gridColumn9.ColumnEdit = this.repositoryItemTextEdit1;
-            this.gridColumn9.FieldName = "Experience";
-            this.gridColumn9.Name = "gridColumn9";
-            this.gridColumn9.Visible = true;
-            this.gridColumn9.VisibleIndex = 7;
+            gridColumn10.ColumnEdit = PetLookUpEdit;
+            gridColumn10.FieldName = "Pet";
+            gridColumn10.Name = "gridColumn10";
+            gridColumn10.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.True;
+            gridColumn10.SortMode = DevExpress.XtraGrid.ColumnSortMode.DisplayText;
+            gridColumn10.Visible = true;
+            gridColumn10.VisibleIndex = 8;
+            // 
+            // PetLookUpEdit
+            // 
+            PetLookUpEdit.AutoHeight = false;
+            PetLookUpEdit.BestFitMode = DevExpress.XtraEditors.Controls.BestFitMode.BestFitResizePopup;
+            PetLookUpEdit.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
+            PetLookUpEdit.CloseUpKey = new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.F5);
+            PetLookUpEdit.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] { new DevExpress.XtraEditors.Controls.LookUpColumnInfo("MonsterName", "Monster Name") });
+            PetLookUpEdit.DisplayMember = "MonsterName";
+            PetLookUpEdit.Name = "PetLookUpEdit";
+            PetLookUpEdit.NullText = "[Pet is null]";
             // 
             // CharacterView
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(640, 517);
-            this.Controls.Add(this.CharacterGridControl);
-            this.Name = "CharacterView";
-            this.Text = "Character";
-            ((System.ComponentModel.ISupportInitialize)(this.AccountLookUpEdit)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CharacterGridControl)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CharacterGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).EndInit();
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            ClientSize = new System.Drawing.Size(640, 517);
+            Controls.Add(CharacterGridControl);
+            Name = "CharacterView";
+            Text = "Character";
+            ((System.ComponentModel.ISupportInitialize)AccountLookUpEdit).EndInit();
+            ((System.ComponentModel.ISupportInitialize)PetLookUpEdit).EndInit();
+            ((System.ComponentModel.ISupportInitialize)CharacterGridControl).EndInit();
+            ((System.ComponentModel.ISupportInitialize)CharacterGridView).EndInit();
+            ((System.ComponentModel.ISupportInitialize)repositoryItemTextEdit1).EndInit();
+            ResumeLayout(false);
         }
 
         #endregion
@@ -206,8 +216,9 @@ namespace Server.Views
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn8;
         private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit1;
         private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit AccountLookUpEdit;
+        private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit PetLookUpEdit;
         private DevExpress.XtraGrid.Columns.GridColumn Caption;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn9;
-     
+
     }
 }
