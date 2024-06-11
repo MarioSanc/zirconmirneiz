@@ -13,11 +13,11 @@ namespace Server.Envir.Commands.Command.Admin
             if (vals.Length < PARAMS_LENGTH)
                 ThrowNewInvalidParametersException();
 
-            player = SEnvir.GetPlayerByCharacter(vals[1]);
+            PlayerObject playerTarget = SEnvir.GetPlayerByCharacter(vals[1]);
 
-            if (player == null)
+            if (playerTarget == null)
                 throw new UserCommandException(string.Format("Could not find player: {0}", vals[1]));
-            player.Teleport(player.CurrentMap, player.CurrentLocation);
+            player.Teleport(playerTarget.CurrentMap, playerTarget.CurrentLocation);
         }
     }
 }

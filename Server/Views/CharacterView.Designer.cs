@@ -44,7 +44,7 @@ namespace Server.Views
             gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
             gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
             repositoryItemTextEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
-            this.Caption = new DevExpress.XtraGrid.Columns.GridColumn();
+            Caption = new DevExpress.XtraGrid.Columns.GridColumn();
             gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
             gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
             gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -75,6 +75,27 @@ namespace Server.Views
             AccountLookUpEdit.DisplayMember = "EMailAddress";
             AccountLookUpEdit.Name = "AccountLookUpEdit";
             AccountLookUpEdit.NullText = "[Account is null]";
+            // 
+            // gridColumn10
+            // 
+            gridColumn10.ColumnEdit = PetLookUpEdit;
+            gridColumn10.FieldName = "Pet";
+            gridColumn10.Name = "gridColumn10";
+            gridColumn10.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.True;
+            gridColumn10.SortMode = DevExpress.XtraGrid.ColumnSortMode.DisplayText;
+            gridColumn10.Visible = true;
+            gridColumn10.VisibleIndex = 9;
+            // 
+            // PetLookUpEdit
+            // 
+            PetLookUpEdit.AutoHeight = false;
+            PetLookUpEdit.BestFitMode = DevExpress.XtraEditors.Controls.BestFitMode.BestFitResizePopup;
+            PetLookUpEdit.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
+            PetLookUpEdit.CloseUpKey = new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.F5);
+            PetLookUpEdit.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] { new DevExpress.XtraEditors.Controls.LookUpColumnInfo("MonsterName", "Monster Name") });
+            PetLookUpEdit.DisplayMember = "MonsterName";
+            PetLookUpEdit.Name = "PetLookUpEdit";
+            PetLookUpEdit.NullText = "[Pet is null]";
             // 
             // CharacterGridControl
             // 
@@ -151,6 +172,13 @@ namespace Server.Views
             repositoryItemTextEdit1.Mask.UseMaskAsDisplayFormat = true;
             repositoryItemTextEdit1.Name = "repositoryItemTextEdit1";
             // 
+            // Caption
+            // 
+            Caption.FieldName = "Caption";
+            Caption.Name = "Caption";
+            Caption.Visible = true;
+            Caption.VisibleIndex = 8;
+            // 
             // gridColumn9
             // 
             gridColumn9.ColumnEdit = repositoryItemTextEdit1;
@@ -158,34 +186,6 @@ namespace Server.Views
             gridColumn9.Name = "gridColumn9";
             gridColumn9.Visible = true;
             gridColumn9.VisibleIndex = 7;
-            // 
-            // Caption
-            // 
-            this.Caption.FieldName = "Caption";
-            this.Caption.Name = "Caption";
-            this.Caption.Visible = true;
-            this.Caption.VisibleIndex = 8;
-            // 
-            // gridColumn10
-            // 
-            gridColumn10.ColumnEdit = PetLookUpEdit;
-            gridColumn10.FieldName = "Pet";
-            gridColumn10.Name = "gridColumn10";
-            gridColumn10.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.True;
-            gridColumn10.SortMode = DevExpress.XtraGrid.ColumnSortMode.DisplayText;
-            gridColumn10.Visible = true;
-            gridColumn10.VisibleIndex = 8;
-            // 
-            // PetLookUpEdit
-            // 
-            PetLookUpEdit.AutoHeight = false;
-            PetLookUpEdit.BestFitMode = DevExpress.XtraEditors.Controls.BestFitMode.BestFitResizePopup;
-            PetLookUpEdit.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
-            PetLookUpEdit.CloseUpKey = new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.F5);
-            PetLookUpEdit.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] { new DevExpress.XtraEditors.Controls.LookUpColumnInfo("MonsterName", "Monster Name") });
-            PetLookUpEdit.DisplayMember = "MonsterName";
-            PetLookUpEdit.Name = "PetLookUpEdit";
-            PetLookUpEdit.NullText = "[Pet is null]";
             // 
             // CharacterView
             // 
