@@ -1866,6 +1866,7 @@ namespace Library
         CastleObjective = 10,
 
         Larva = 100,
+        Larva2 = 101,
 
         LesserWedgeMoth = 110,
 

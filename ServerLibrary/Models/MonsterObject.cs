@@ -175,12 +175,11 @@ namespace Server.Models
                     return new ZumaKing
                     {
                         MonsterInfo = monsterInfo,
+                        MaxStage = 4,
+
                         SpawnList =
                         {
-                            [SEnvir.MonsterInfoList.Binding.First(x => x.Flag == MonsterFlag.ZumaArcherMonster)] = 50,
-                            [SEnvir.MonsterInfoList.Binding.First(x => x.Flag == MonsterFlag.ZumaFanaticMonster)] = 25,
-                            [SEnvir.MonsterInfoList.Binding.First(x => x.Flag == MonsterFlag.ZumaGuardianMonster)] = 25,
-                            [SEnvir.MonsterInfoList.Binding.First(x => x.Flag == MonsterFlag.ZumaKeeperMonster)] = 1
+                            [SEnvir.MonsterInfoList.Binding.First(x => x.Flag == MonsterFlag.ZumaKeeperMonster)] = 2
                         }
                     };
                 case 23:
@@ -225,13 +224,12 @@ namespace Server.Models
                     return new ArchLichTaedu
                     {
                         MonsterInfo = monsterInfo,
+                        MaxStage = 4,
+                        MinSpawn = 2,
+                        RandomSpawn = 0,
                         SpawnList =
                         {
-                            [SEnvir.MonsterInfoList.Binding.First(x => x.Flag == MonsterFlag.BoneArcher)] = 90,
-                            [SEnvir.MonsterInfoList.Binding.First(x => x.Flag == MonsterFlag.BoneSoldier)] = 15,
-                            [SEnvir.MonsterInfoList.Binding.First(x => x.Flag == MonsterFlag.BoneBladesman)] = 15,
-                            [SEnvir.MonsterInfoList.Binding.First(x => x.Flag == MonsterFlag.BoneCaptain)] = 15,
-                            [SEnvir.MonsterInfoList.Binding.First(x => x.Flag == MonsterFlag.SkeletonEnforcer)] = 1
+                            [SEnvir.MonsterInfoList.Binding.First(x => x.Flag == MonsterFlag.GoruGeneral)] = 5,
                         }
                     };
                 case 44:
@@ -641,6 +639,13 @@ namespace Server.Models
                         PoisonTicks = 5,
                         PoisonFrequency = 3,
                         PoisonRate = 5,
+                    };
+
+                case 137:
+                    return new ArachnidGrazer
+                    {
+                        MonsterInfo = monsterInfo,
+                        SpawnList = { [SEnvir.MonsterInfoList.Binding.First(x => x.Flag == MonsterFlag.Larva2)] = 1 }
                     };
 
 
@@ -1066,6 +1071,8 @@ namespace Server.Models
                 return;
             }
 
+            if (SEnvir.Now < SearchTime || CurrentMap.Players.Count == 0) return;
+
             if (Target != null)
             {
                 if (!Visible)
@@ -1074,7 +1081,7 @@ namespace Server.Models
                 }
                 else if (!CanMove && !CanAttack) return;
             }
-            else if (SEnvir.Now < SearchTime || CurrentMap.Players.Count == 0) return;
+            //else if (SEnvir.Now < SearchTime || CurrentMap.Players.Count == 0) return;
 
             SearchTime = SEnvir.Now + SearchDelay;
 
@@ -1118,8 +1125,18 @@ namespace Server.Models
 
             if (closest.Count == 0) return;
 
-            Target = closest[SEnvir.Random.Next(closest.Count)];
+            //Target = closest[SEnvir.Random.Next(closest.Count)];
+            ChangeTarget(closest[SEnvir.Random.Next(closest.Count)]);
         }
+
+        public void ChangeTarget(MapObject NewTarget)
+        {
+            if (Target == null)
+                Target = NewTarget;
+            else if (SEnvir.Random.Next(3) == 1)
+                Target = NewTarget;
+        }
+
         public void ProperSearch()
         {
             if (Target != null)
@@ -2444,7 +2461,8 @@ namespace Server.Models
             if (Dead) return power;
 
             if (CanAttackTarget(attacker) && PetOwner == null || Target == null)
-                Target = attacker;
+                ChangeTarget(attacker);
+            //Target = attacker;
 
 
             return power;
@@ -2453,8 +2471,9 @@ namespace Server.Models
         {
             bool res = base.ApplyPoison(p);
 
-            if (res && CanAttackTarget(p.Owner) && Target == null)
-                Target = p.Owner;
+            if (res && CanAttackTarget(p.Owner))// && Target == null)
+                ChangeTarget(p.Owner);
+            //Target = p.Owner;
 
             if (p.Owner.Race == ObjectType.Player)
                 PlayerTagged = true;

@@ -11,7 +11,9 @@ namespace Server.Models.Monsters
     {
         public int MaxStage = 7;
         public int Stage;
-        
+        public int MinSpawn = 2;
+        public int RandomSpawn = 0;
+
         public ZumaKing()
         {
             AvoidFireWall = false;
@@ -41,7 +43,7 @@ namespace Server.Models.Monsters
             if (CurrentHP*MaxStage/Stats[Stat.Health] >= Stage || Stage <= 0) return;
 
             Stage--;
-            SpawnMinions(4, 8, Target);
+            SpawnMinions(MinSpawn, RandomSpawn, Target);
         }
         
         public override void ProcessTarget()
