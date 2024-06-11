@@ -11,20 +11,20 @@ namespace Server.Envir.Commands.Command.Admin
 
         public override void Action(PlayerObject player, string[] vals)
         {
+            PlayerObject playerTarget;
 
             if (vals.Length < PARAMS_LENGTH)
-                ThrowNewInvalidParametersException();
+                playerTarget = player;
             else
             {
-                player = SEnvir.GetPlayerByCharacter(vals[1]);
-                if (player == null)
+                playerTarget = SEnvir.GetPlayerByCharacter(vals[1]);
+                if (playerTarget == null)
                     throw new UserCommandException(string.Format("Could not find player: {0}", vals[1]));
-
-                // If player is dead, revive with max health.
-                if (player.Dead)
-                {
-                    player.Revive();
-                }
+            }
+            // If player is dead, revive with max health.
+            if (playerTarget.Dead)
+            {
+                playerTarget.Revive();
             }
         }
     }

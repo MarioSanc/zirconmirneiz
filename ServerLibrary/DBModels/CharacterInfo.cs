@@ -760,7 +760,7 @@ namespace Server.DBModels
                 var oldValue = _Pet;
                 _Pet = value;
 
-                OnChanged(oldValue, value, "Pet");
+                //OnChanged(oldValue, value, "Pet");
             }
         }
         private MonsterInfo _Pet;

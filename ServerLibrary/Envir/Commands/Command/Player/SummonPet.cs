@@ -25,7 +25,7 @@ namespace Server.Envir.Commands.Player
 
                     ob.Master?.MinionList.Remove(ob);
                     ob.Master = null;
-                    ob.SummonLevel = player.Level;
+                    ob.SummonLevel = 0;
                     ob.TameTime = SEnvir.Now.AddDays(365);
 
                     var location = Functions.Move(player.CurrentLocation, player.Character.Direction, 1);
