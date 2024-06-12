@@ -648,9 +648,10 @@ namespace Server.Models
                         SpawnList = { [SEnvir.MonsterInfoList.Binding.First(x => x.Flag == MonsterFlag.Larva2)] = 1 }
                     };
 
-
-
-
+                case 138:
+                    {
+                        return new MinocaveBoss2f { MonsterInfo = monsterInfo };
+                    };
 
                 case 1001:
                     return new CastleFlag { MonsterInfo = monsterInfo };

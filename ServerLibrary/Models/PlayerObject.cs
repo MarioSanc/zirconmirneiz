@@ -2195,7 +2195,7 @@ namespace Server.Models
                 Stats[Stat.MaxMR] = power - Stats[Stat.MinMR];
             }
 
-            Stats[Stat.AttackSpeed] += Math.Min(3, Level / 15);
+            //Stats[Stat.AttackSpeed] += Math.Min(3, Level / 15);
 
             Stats[Stat.FireResistance] = Math.Min(5, Stats[Stat.FireResistance]);
             Stats[Stat.IceResistance] = Math.Min(5, Stats[Stat.IceResistance]);
@@ -2207,7 +2207,7 @@ namespace Server.Models
             Stats[Stat.PhysicalResistance] = Math.Min(5, Stats[Stat.PhysicalResistance]);
 
             Stats[Stat.Comfort] = Math.Min(20, Stats[Stat.Comfort]);
-            Stats[Stat.AttackSpeed] = Math.Min(15, Stats[Stat.AttackSpeed]);
+            //Stats[Stat.AttackSpeed] = Math.Min(15, Stats[Stat.AttackSpeed]);
 
             RegenDelay = TimeSpan.FromMilliseconds(15000 - Stats[Stat.Comfort] * 650);
 
@@ -14253,6 +14253,24 @@ namespace Server.Models
         {
             if (attacker?.Node == null || power == 0 || Dead || attacker.CurrentMap != CurrentMap || !Functions.InRange(attacker.CurrentLocation, CurrentLocation, Config.MaxViewRange) || Stats[Stat.Invincibility] > 0) return 0;
 
+            if (attacker.Race == ObjectType.Player)
+            {
+                PlayerObject AttackerPlayer = (PlayerObject)attacker;
+
+                switch (AttackerPlayer.Character.Class)
+                {
+                    case MirClass.Warrior:
+                        power = (int)(power * 4);
+                        break;
+                    case MirClass.Wizard:
+                        power = (int)(power * 6);
+                        break;
+                    case MirClass.Taoist:
+                        power = (int)(power * 6);
+                        break;
+                }                   
+            }
+
             if (element != Element.None)
             {
                 if (SEnvir.Random.Next(attacker.Race == ObjectType.Player ? 200 : 100) <= Stats[Stat.EvasionChance])// 4 + magic.Level * 2)
@@ -14305,14 +14323,6 @@ namespace Server.Models
             {
                 PvPTime = SEnvir.Now;
                 ((PlayerObject)attacker).PvPTime = SEnvir.Now;
-
-                    // Multiplica el daño segun la clase en PVP
-                    if (Character.Class == MirClass.Warrior)
-                        power = (int)(power * 2);
-                    if (Character.Class == MirClass.Wizard)
-                        power = (int)(power * 8);
-                    if (Character.Class == MirClass.Taoist)
-                        power = (int)(power * 6);
             }
 
             if (Stats[Stat.Comfort] < 20)
@@ -14371,13 +14381,14 @@ namespace Server.Models
 
                 if (buff != null)
                 {
-                    buff.RemainingTime -= TimeSpan.FromMilliseconds(power * 100);
+                    buff.RemainingTime -= TimeSpan.FromMilliseconds(power * 50);
                     Enqueue(new S.BuffTime { Index = buff.Index, Time = buff.RemainingTime });
                 }
 
-                if (attacker.Race == ObjectType.Player)
+               /* if (attacker.Race == ObjectType.Player)
                     power -= power * Stats[Stat.MagicShield] / 80;
                 else
+               */
                     power -= power * Stats[Stat.MagicShield] / 100;
             }
 
