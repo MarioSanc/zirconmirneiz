@@ -2244,6 +2244,45 @@ namespace Server.Models
                 }
             }
         }
+
+        public void MassGustBlast()
+        {
+            Direction = Functions.DirectionFromPoint(CurrentLocation, Target.CurrentLocation);
+
+            List<uint> targetIDs = new List<uint>();
+            List<Point> locations = new List<Point>();
+
+            Broadcast(new S.ObjectMagic { ObjectID = ObjectID, Direction = Direction, CurrentLocation = CurrentLocation, Cast = true, Type = MagicType.GustBlast, Targets = targetIDs, Locations = locations });
+
+            UpdateAttackTime();
+
+            List<Cell> cells = CurrentMap.GetCells(CurrentLocation, 0, Config.MaxViewRange);
+            foreach (Cell cell in cells)
+            {
+                if (cell.Objects == null)
+                {
+                    if (SEnvir.Random.Next(60) == 0)
+                        locations.Add(cell.Location);
+
+                    continue;
+                }
+
+                foreach (MapObject ob in cell.Objects)
+                {
+                    if (!CanAttackTarget(ob)) continue;
+
+                    targetIDs.Add(ob.ObjectID);
+
+                    ActionList.Add(new DelayedAction(
+                        SEnvir.Now.AddMilliseconds(500),
+                        ActionType.DelayAttack,
+                        ob,
+                        GetDC(),
+                        Element.Wind));
+                }
+            }
+        }
+
         /*
                 public void MonsterIceStorm()
                 {

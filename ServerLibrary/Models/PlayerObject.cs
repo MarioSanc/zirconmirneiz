@@ -233,7 +233,7 @@ namespace Server.Models
 
             SetupMagic();
         }
-
+        
         public MagicObject SetupMagic(UserMagic userMagic)
         {
             var type = userMagic.Info.Magic;
@@ -1081,7 +1081,7 @@ namespace Server.Models
                 BuffAdd(BuffType.Developer, TimeSpan.MaxValue, null, true, false, TimeSpan.Zero);
 
             Enqueue(new S.HelmetToggle { HideHelmet = Character.HideHelmet });
-
+                
             //Send War Date to guild.
             foreach (CastleInfo castle in SEnvir.CastleInfoList.Binding)
             {
@@ -14305,6 +14305,14 @@ namespace Server.Models
             {
                 PvPTime = SEnvir.Now;
                 ((PlayerObject)attacker).PvPTime = SEnvir.Now;
+
+                    // Multiplica el daño segun la clase en PVP
+                    if (Character.Class == MirClass.Warrior)
+                        power = (int)(power * 2);
+                    if (Character.Class == MirClass.Wizard)
+                        power = (int)(power * 8);
+                    if (Character.Class == MirClass.Taoist)
+                        power = (int)(power * 6);
             }
 
             if (Stats[Stat.Comfort] < 20)
@@ -14363,11 +14371,14 @@ namespace Server.Models
 
                 if (buff != null)
                 {
-                    buff.RemainingTime -= TimeSpan.FromMilliseconds(power * 25);
+                    buff.RemainingTime -= TimeSpan.FromMilliseconds(power * 100);
                     Enqueue(new S.BuffTime { Index = buff.Index, Time = buff.RemainingTime });
                 }
 
-                power -= power * Stats[Stat.MagicShield] / 100;
+                if (attacker.Race == ObjectType.Player)
+                    power -= power * Stats[Stat.MagicShield] / 80;
+                else
+                    power -= power * Stats[Stat.MagicShield] / 100;
             }
 
             if (StruckTime != DateTime.MaxValue && SEnvir.Now > StruckTime.AddMilliseconds(500) && canStruck)
