@@ -146,6 +146,7 @@ namespace Client.Envir.Translations
         public override string CommonControlConfigWindowSoundTabMonsterVolumeLabel { get; set; } = "Monster Volume:";
         public override string CommonControlConfigWindowSoundTabMagicVolumeLabel { get; set; } = "Magic Volume:";
         public override string CommonControlConfigWindowGameTabItemNameLabel { get; set; } = "Item Names:";
+        public override string CommonControlConfigWindowGameTabAutoPickUpItems { get; set; } = "Auto Pickup Items:";
         public override string CommonControlConfigWindowGameTabMonsterNameLabel { get; set; } = "Monster Names:";
         public override string CommonControlConfigWindowGameTabPlayerNameLabel { get; set; } = "Player Names:";
         public override string CommonControlConfigWindowGameTabUserHealthLabel { get; set; } = "User Health:";

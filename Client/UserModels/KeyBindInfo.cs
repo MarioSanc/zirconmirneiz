@@ -342,5 +342,8 @@ namespace Client.UserModels
 
         [Description("Show/Hide Items Name")]
         ShowHideItemsName,
+
+        [Description("Toggle Auto Pickup Items")]
+        ToggleAutoPickupItems,
     }
 }

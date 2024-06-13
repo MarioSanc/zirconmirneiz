@@ -793,6 +793,10 @@ namespace Client.Envir
 
             MapObject.User.NameChanged();
         }
+        public void Process(S.ChangeMapRegion p)
+        {
+            GameScene.Game.BigMapBox.ChangeRegion();
+        }
         public void Process(S.DayChanged p)
         {
             GameScene.Game.DayTime = p.DayTime;

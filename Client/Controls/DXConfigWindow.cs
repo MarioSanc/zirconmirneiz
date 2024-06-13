@@ -31,7 +31,7 @@ namespace Client.Controls
 
         //Game 
         public DXTab GameTab;
-        private DXCheckBox ItemNameCheckBox, MonsterNameCheckBox, PlayerNameCheckBox, UserHealthCheckBox, MonsterHealthCheckBox, DamageNumbersCheckBox, 
+        private DXCheckBox ItemNameCheckBox, AutoPickUpCheckBox, MonsterNameCheckBox, PlayerNameCheckBox, UserHealthCheckBox, MonsterHealthCheckBox, DamageNumbersCheckBox, 
             EscapeCloseAllCheckBox, ShiftOpenChatCheckBox, RightClickDeTargetCheckBox, MonsterBoxVisibleCheckBox, LogChatCheckBox, DrawEffectsCheckBox, 
             DrawParticlesCheckBox, DrawWeatherCheckBox;
         public DXCheckBox DisplayHelmetCheckBox, HideChatBarCheckBox;
@@ -78,6 +78,7 @@ namespace Client.Controls
             PortBox.ValueTextBox.TextBox.Text = Config.Port.ToString();
 
             ItemNameCheckBox.Checked= Config.ShowItemNames;
+            AutoPickUpCheckBox.Checked = Config.AutoPickUpItems;
             MonsterNameCheckBox.Checked = Config.ShowMonsterNames;
             PlayerNameCheckBox.Checked = Config.ShowPlayerNames;
             UserHealthCheckBox.Checked = Config.ShowUserHealth;
@@ -381,54 +382,61 @@ namespace Client.Controls
             };
             ItemNameCheckBox.Location = new Point(120 - ItemNameCheckBox.Size.Width, 10);
 
+            AutoPickUpCheckBox = new DXCheckBox
+            {
+                Label = { Text = CEnvir.Language.CommonControlConfigWindowGameTabAutoPickUpItems },
+                Parent = GameTab,
+            };
+            AutoPickUpCheckBox.Location = new Point(120 - AutoPickUpCheckBox.Size.Width, 35);
+
             MonsterNameCheckBox = new DXCheckBox
             {
                 Label = { Text = CEnvir.Language.CommonControlConfigWindowGameTabMonsterNameLabel },
                 Parent = GameTab,
             };
-            MonsterNameCheckBox.Location = new Point(120 - MonsterNameCheckBox.Size.Width, 35);
+            MonsterNameCheckBox.Location = new Point(120 - MonsterNameCheckBox.Size.Width, 60);
 
             PlayerNameCheckBox = new DXCheckBox
             {
                 Label = { Text = CEnvir.Language.CommonControlConfigWindowGameTabPlayerNameLabel },
                 Parent = GameTab,
             };
-            PlayerNameCheckBox.Location = new Point(120 - PlayerNameCheckBox.Size.Width, 60);
+            PlayerNameCheckBox.Location = new Point(120 - PlayerNameCheckBox.Size.Width, 85);
 
             UserHealthCheckBox = new DXCheckBox
             {
                 Label = { Text = CEnvir.Language.CommonControlConfigWindowGameTabUserHealthLabel },
                 Parent = GameTab,
             };
-            UserHealthCheckBox.Location = new Point(120 - UserHealthCheckBox.Size.Width, 85);
+            UserHealthCheckBox.Location = new Point(120 - UserHealthCheckBox.Size.Width, 110);
 
             MonsterHealthCheckBox = new DXCheckBox
             {
                 Label = { Text = CEnvir.Language.CommonControlConfigWindowGameTabMonsterHealthLabel },
                 Parent = GameTab,
             };
-            MonsterHealthCheckBox.Location = new Point(120 - MonsterHealthCheckBox.Size.Width, 110);
+            MonsterHealthCheckBox.Location = new Point(120 - MonsterHealthCheckBox.Size.Width, 135);
 
             DamageNumbersCheckBox = new DXCheckBox
             {
                 Label = { Text = CEnvir.Language.CommonControlConfigWindowGameTabDamageNumbersLabel },
                 Parent = GameTab,
             };
-            DamageNumbersCheckBox.Location = new Point(120 - DamageNumbersCheckBox.Size.Width, 135);
+            DamageNumbersCheckBox.Location = new Point(120 - DamageNumbersCheckBox.Size.Width, 160);
 
             DrawParticlesCheckBox = new DXCheckBox
             {
                 Label = { Text = CEnvir.Language.CommonControlConfigWindowGameTabDrawParticlesLabel },
                 Parent = GameTab,
             };
-            DrawParticlesCheckBox.Location = new Point(120 - DrawParticlesCheckBox.Size.Width, 160);
+            DrawParticlesCheckBox.Location = new Point(120 - DrawParticlesCheckBox.Size.Width, 185);
 
             DisplayHelmetCheckBox = new DXCheckBox
             {
                 Label = { Text = CEnvir.Language.CommonControlConfigWindowGameTabDisplayHelmetLabel },
                 Parent = GameTab,
             };
-            DisplayHelmetCheckBox.Location = new Point(120 - DisplayHelmetCheckBox.Size.Width, 185);
+            DisplayHelmetCheckBox.Location = new Point(120 - DisplayHelmetCheckBox.Size.Width, 210);
             DisplayHelmetCheckBox.MouseClick += (o, e) =>
             {
                 CEnvir.Enqueue(new C.HelmetToggle { HideHelmet = DisplayHelmetCheckBox.Checked });
@@ -440,7 +448,7 @@ namespace Client.Controls
                 Parent = GameTab,
                 Hint = "Hide chat bar when not active"
             };
-            HideChatBarCheckBox.Location = new Point(120 - HideChatBarCheckBox.Size.Width, 210);
+            HideChatBarCheckBox.Location = new Point(270 - HideChatBarCheckBox.Size.Width, 10);
             HideChatBarCheckBox.MouseClick += (o, e) =>
             {
                 if (HideChatBarCheckBox.Checked)
@@ -454,7 +462,7 @@ namespace Client.Controls
                 Label = { Text = CEnvir.Language.CommonControlConfigWindowGameTabEscapeCloseAllLabel },
                 Parent = GameTab,
             };
-            EscapeCloseAllCheckBox.Location = new Point(270 - EscapeCloseAllCheckBox.Size.Width, 10);
+            EscapeCloseAllCheckBox.Location = new Point(270 - EscapeCloseAllCheckBox.Size.Width, 35);
 
             ShiftOpenChatCheckBox = new DXCheckBox
             {
@@ -462,7 +470,7 @@ namespace Client.Controls
                 Parent = GameTab,
                 Hint = CEnvir.Language.CommonControlConfigWindowGameTabShiftOpenChatHint
             };
-            ShiftOpenChatCheckBox.Location = new Point(270 - ShiftOpenChatCheckBox.Size.Width, 35);
+            ShiftOpenChatCheckBox.Location = new Point(270 - ShiftOpenChatCheckBox.Size.Width, 60);
 
             RightClickDeTargetCheckBox = new DXCheckBox
             {
@@ -470,40 +478,40 @@ namespace Client.Controls
                 Parent = GameTab,
                 Hint = CEnvir.Language.CommonControlConfigWindowGameTabRightClickDeTargetHint
             };
-            RightClickDeTargetCheckBox.Location = new Point(270 - RightClickDeTargetCheckBox.Size.Width, 60);
+            RightClickDeTargetCheckBox.Location = new Point(270 - RightClickDeTargetCheckBox.Size.Width, 85);
 
             MonsterBoxVisibleCheckBox = new DXCheckBox
             {
                 Label = { Text = CEnvir.Language.CommonControlConfigWindowGameTabMonsterBoxVisibleLabel },
                 Parent = GameTab,
             };
-            MonsterBoxVisibleCheckBox.Location = new Point(270 - MonsterBoxVisibleCheckBox.Size.Width, 85);
+            MonsterBoxVisibleCheckBox.Location = new Point(270 - MonsterBoxVisibleCheckBox.Size.Width, 110);
 
             LogChatCheckBox = new DXCheckBox
             {
                 Label = { Text = CEnvir.Language.CommonControlConfigWindowGameTabLogChatLabel },
                 Parent = GameTab,
             };
-            LogChatCheckBox.Location = new Point(270 - LogChatCheckBox.Size.Width, 110);
+            LogChatCheckBox.Location = new Point(270 - LogChatCheckBox.Size.Width, 135);
 
             DrawEffectsCheckBox = new DXCheckBox
             {
                 Label = { Text = CEnvir.Language.CommonControlConfigWindowGameTabDrawEffectsLabel },
                 Parent = GameTab,
             };
-            DrawEffectsCheckBox.Location = new Point(270 - DrawEffectsCheckBox.Size.Width, 135);
+            DrawEffectsCheckBox.Location = new Point(270 - DrawEffectsCheckBox.Size.Width, 160);
 
             DrawWeatherCheckBox = new DXCheckBox
             {
                 Label = { Text = CEnvir.Language.CommonControlConfigWindowGameTabDrawWeatherLabel },
                 Parent = GameTab,
             };
-            DrawWeatherCheckBox.Location = new Point(270 - DrawWeatherCheckBox.Size.Width, 160);
+            DrawWeatherCheckBox.Location = new Point(270 - DrawWeatherCheckBox.Size.Width, 185);
 
             KeyBindButton = new DXButton
             {
                 Parent = GameTab,
-                Location = new Point(190, 185),
+                Location = new Point(190, 210),
                 Size = new Size(80, SmallButtonHeight),
                 ButtonType = ButtonType.SmallButton,
                 Label = { Text = CEnvir.Language.CommonControlConfigWindowGameTabKeyBindButtonLabel }
