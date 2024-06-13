@@ -2617,6 +2617,12 @@ namespace Server.Models
             TeleportTime = SEnvir.Now.AddMinutes(5);
         }
 
+        public void ChangeMapRegion()
+        {
+            if (Character.Account.Admin)
+                Enqueue(new S.ChangeMapRegion { });
+        }
+
         public override void Dodged()
         {
             base.Dodged();
@@ -7654,6 +7660,14 @@ namespace Server.Models
                     }
                 }
             }
+        }
+
+        public void AutoPickUpItem()
+        {
+            ItemObject item = (ItemObject)CurrentCell.Objects.FirstOrDefault(x => x.Race == ObjectType.Item);
+
+            if (item != null)
+                item.PickUpItem(this);
         }
 
         public bool CanWearItem(UserItem item, EquipmentSlot slot)

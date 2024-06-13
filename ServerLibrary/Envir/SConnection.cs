@@ -490,6 +490,12 @@ namespace Server.Envir
 
             Player.PickUp();
         }
+        public void Process(C.AutoPickUp p)
+        {
+            if (Stage != GameStage.Game) return;
+
+            Player.AutoPickUpItem();
+        }
         public void Process(C.CurrencyDrop p)
         {
             if (Stage != GameStage.Game) return;
@@ -1286,6 +1292,11 @@ namespace Server.Envir
             if (Stage != GameStage.Game) return;
 
             Player.TeleportRing(p.Location, p.Index);
+        }
+
+        public void Process(C.ChangeMapRegion p)
+        {
+            Player.ChangeMapRegion();
         }
 
         public void Process(C.JoinStarterGuild p)

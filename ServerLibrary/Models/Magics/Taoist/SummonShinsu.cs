@@ -52,7 +52,7 @@ namespace Server.Models.Magics
 
             if (ob != null)
             {
-                ob.PetRecall();
+                ob.PetRecall(1);
                 return;
             }
 

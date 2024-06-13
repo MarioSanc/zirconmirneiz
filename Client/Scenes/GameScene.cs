@@ -1530,6 +1530,9 @@ namespace Client.Scenes
                     case KeyBindAction.ShowHideItemsName:
                         Config.ShowItemNames = !Config.ShowItemNames;
                         break;
+                    case KeyBindAction.ToggleAutoPickupItems:
+                        Config.AutoPickUpItems = !Config.AutoPickUpItems;
+                        break;
                     default:
                         continue;
                 }

@@ -716,6 +716,21 @@ namespace Client.Models
                 if (buff.Pause || buff.RemainingTime == TimeSpan.MaxValue) continue;
                 buff.RemainingTime = Functions.Max(TimeSpan.Zero, buff.RemainingTime - ticks);
             }
+
+            // Auto PickUp Items
+            if (Config.AutoPickUpItems)
+            {
+                if (CEnvir.Now <= GameScene.Game.PickUpTime) return;
+
+                ItemObject item = (ItemObject)CurrentCell.Objects.FirstOrDefault(x => x.Race == ObjectType.Item);
+
+                if (item != null)
+                {
+                    CEnvir.Enqueue(new C.AutoPickUp());
+
+                    GameScene.Game.PickUpTime = CEnvir.Now.AddMilliseconds(500);
+                }
+            }
         }
 
         public override void FrameIndexChanged()

@@ -90,6 +90,10 @@ namespace Library.Network.ServerPackets
         public MirDirection Direction { get; set; }
         public Point Location { get; set; }
     }
+    public sealed class ChangeMapRegion : Packet
+    {
+
+    }
     public sealed class ObjectRemove : Packet
     {
         public uint ObjectID { get; set; }

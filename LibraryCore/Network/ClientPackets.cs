@@ -204,6 +204,7 @@ namespace Library.Network.ClientPackets
 
     public sealed class PickUp : Packet {}
 
+    public sealed class AutoPickUp : Packet { }
     public sealed class Chat : Packet
     {
         public string Text { get; set; }
@@ -654,6 +655,11 @@ namespace Library.Network.ClientPackets
     {
         public Point Location { get; set; }
         public int Index { get; set; }
+    }
+
+    public sealed class ChangeMapRegion : Packet
+    {
+
     }
 
     public sealed class JoinStarterGuild : Packet

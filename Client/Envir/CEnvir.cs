@@ -718,6 +718,11 @@ namespace Client.Envir
                     bind.Key2 = Keys.D0;
                     bind.Shift2 = true;
                     break;
+                case KeyBindAction.ToggleAutoPickupItems:
+                    bind.Category = "Items";
+                    bind.Key1 = Keys.I;
+                    bind.Shift1 = true; //This means press and hold left shift
+                    break;
                 case KeyBindAction.SpellSet01:
                     bind.Category = "Magic";
                     bind.Key1 = Keys.F1;

@@ -71,7 +71,7 @@ namespace Server.Models.Magics
 
                         foreach (var ob in cell.Objects)
                         {
-                            if (ob.Race != ObjectType.Monster || !Player.CanAttackTarget(ob) || !Functions.InRange(CurrentLocation, ob.CurrentLocation, Globals.MagicRange))
+                            if ((ob.Race != ObjectType.Monster && ob.Race != ObjectType.Player) || !Player.CanAttackTarget(ob) || !Functions.InRange(CurrentLocation, ob.CurrentLocation, Globals.MagicRange))
                                 continue;
 
                             if (SEnvir.Random.Next(powerDivisor) == 0)
@@ -108,7 +108,7 @@ namespace Server.Models.Magics
 
                 foreach (var ob in cell.Objects)
                 {
-                    if (ob.Race != ObjectType.Monster || !Player.CanAttackTarget(ob) || !Functions.InRange(CurrentLocation, ob.CurrentLocation, Globals.MagicRange))
+                    if ((ob.Race != ObjectType.Monster && ob.Race != ObjectType.Player) || !Player.CanAttackTarget(ob) || !Functions.InRange(CurrentLocation, ob.CurrentLocation, Globals.MagicRange))
                         continue;
 
                     actualTargets.Add(ob);

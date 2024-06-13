@@ -1037,9 +1037,9 @@ namespace Server.Models
 
             Broadcast(new S.ObjectPetOwnerChanged { ObjectID = ObjectID });
         }
-        public void PetRecall()
+        public void PetRecall(int distance = -1)
         {
-            Cell cell = PetOwner.CurrentMap.GetCell(Functions.Move(PetOwner.CurrentLocation, PetOwner.Direction, -1));
+            Cell cell = PetOwner.CurrentMap.GetCell(Functions.Move(PetOwner.CurrentLocation, PetOwner.Direction, distance));
 
             if (cell == null || cell.Movements != null)
                 cell = PetOwner.CurrentCell;

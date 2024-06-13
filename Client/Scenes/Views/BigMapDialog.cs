@@ -91,6 +91,8 @@ namespace Client.Scenes.Views
 
         public Dictionary<object, DXControl> MapInfoObjects = new Dictionary<object, DXControl>();
 
+        private MapInfo NextRegion;
+
         public override void OnClientAreaChanged(Rectangle oValue, Rectangle nValue)
         {
             base.OnClientAreaChanged(oValue, nValue);
@@ -303,9 +305,19 @@ namespace Client.Scenes.Views
                     control.LibraryFile = LibraryFile.GameInter;
                     break;
             }
-            control.MouseClick += (o, e) => SelectedInfo = ob.DestinationRegion.Map;
+            control.MouseClick += (o, e) => { 
+                NextRegion = ob.DestinationRegion.Map; 
+                CEnvir.Enqueue(new C.ChangeMapRegion {}); 
+            };//SelectedInfo = ob.DestinationRegion.Map;
+
             control.Location = new Point((int) (ScaleX*x) - control.Size.Width/2, (int) (ScaleY*y) - control.Size.Height/2);
         }
+
+        public void ChangeRegion()
+        {
+            SelectedInfo = NextRegion;
+        }
+
         public void Update(ClientObjectData ob)
         {
             if (SelectedInfo == null) return;
