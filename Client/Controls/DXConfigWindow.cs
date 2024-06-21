@@ -1015,6 +1015,7 @@ namespace Client.Controls
             }
 
             Config.ShowItemNames = ItemNameCheckBox.Checked;
+            Config.AutoPickUpItems = AutoPickUpCheckBox.Checked;
             Config.ShowMonsterNames = MonsterNameCheckBox.Checked;
             Config.ShowPlayerNames = PlayerNameCheckBox.Checked;
             Config.ShowUserHealth = UserHealthCheckBox.Checked;
@@ -1393,6 +1394,14 @@ namespace Client.Controls
                         ItemNameCheckBox.Dispose();
 
                     ItemNameCheckBox = null;
+                }
+
+                if (AutoPickUpCheckBox != null)
+                {
+                    if (!AutoPickUpCheckBox.IsDisposed)
+                        AutoPickUpCheckBox.Dispose();
+
+                    AutoPickUpCheckBox = null;
                 }
 
                 if (MonsterNameCheckBox != null)

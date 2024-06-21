@@ -720,6 +720,9 @@ namespace Library
         Mon_62,
         Mon_63,
         Mon_64,
+        Mon_65,
+        Mon_66,
+        Mon_67,
 
         Magic, 
         MagicEx,

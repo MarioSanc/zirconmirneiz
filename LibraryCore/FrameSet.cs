@@ -82,7 +82,9 @@ namespace Library
             EvilMirDragon,
             GroundStuckBosses,
             GroundStuckBosses2,
-            GroundStuckBosses3;
+            GroundStuckBosses3,
+
+            CrystalMirMonsters;
 
 
         static FrameSet()
