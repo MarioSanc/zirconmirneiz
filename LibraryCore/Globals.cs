@@ -82,7 +82,7 @@ namespace Library
             MaxAutoPotionCount = 8,
 
             MagicRange = 10,
-            MagicMaxLevel = 4,
+            MagicMaxLevel = 3,
 
             InstanceUnloadTimeInMinutes = 5,
 
