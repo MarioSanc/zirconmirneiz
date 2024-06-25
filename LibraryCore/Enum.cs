@@ -1351,6 +1351,42 @@ namespace Library
         Kraken = 658,
         StoneEye = 659,
 
+        //Mon65
+        NormalRyu = 660,
+        RedRyu = 661,
+        YellowRyu = 662,
+        GreenRyu = 663,
+        OrangeRyu = 664,
+        BrownRyu = 665,
+        GreyRyu = 666,
+        BlackRyu = 667,
+        BlueRyu = 668,
+        BeigeRyu = 669,
+
+        //Mon66
+        CrystalSpider = 670,
+        GreenCrystalSpider = 671,
+        BlackSpittingSpider = 672,
+        ReaperArachne = 673,
+        BlueGangSpider = 674,
+        BlueVenomSpider = 675,
+        YellowDarkArachnid = 676,
+        YellowVenomousArachnid = 677,
+        SpiderEgg = 678,
+        Khazard = 679,
+
+        //Mon67
+        GreenSkeletonLord = 680,
+        BlueSkeletonLord = 681,
+        RedKameSemi = 682,
+        GreenKameSemi = 683,
+        BlueKameSemi = 684,
+        LanternKameSemi = 685,
+        FigureKameSemi = 686,
+        NormalKameSemi = 687,
+        RedSpiritTiger = 688,
+        WhiteSpiritTiger = 689,
+
         //Flag
         CastleFlag = 1000
     }
