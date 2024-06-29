@@ -2619,7 +2619,7 @@ namespace Server.Models
 
         public void ChangeMapRegion()
         {
-            if (Character.Account.Admin)
+            if (Character.Player.GameMaster)
                 Enqueue(new S.ChangeMapRegion { });
         }
 
